@@ -1,0 +1,375 @@
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #2d3748; max-width: 900px; margin: 0 auto; padding: 20px;">
+    <header style="border-bottom: 3px solid #2b6cb0; padding-bottom: 12px; margin-bottom: 24px;">
+        <p style="color: #1a365d; margin: 0 0 6px 0; font-size: 1.85rem;">Course Recitations &amp; Problem Sets</p>
+        <p style="margin: 0; color: #4a5568; font-size: 1rem;">Calculus I: Integral Calculus, Accumulation Functions, and FTC</p>
+    </header>
+    <nav style="background-color: #ebf8ff; border-radius: 8px; padding: 18px 24px; margin-bottom: 32px; border: 1px solid #bee3f8;" aria-label="Recitation Index">
+        <h2 style="color: #2b6cb0; font-size: 1.2rem; margin-top: 0; margin-bottom: 10px;">Recitation Index</h2>
+        <ul style="margin: 0; padding-left: 20px; color: #2c5282;">
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#rec-1">Recitation 1: Approximating Areas, Definite Integrals, and FTC</a></li>
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#rec-2">Recitation 2: Net Change, Substitution, and Areas Between Curves</a></li>
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#rec-3">Recitation 3: Volumes of Solids: Cross-Sections, Disks, Washers, and Shells</a></li>
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#rec-4">Recitation 4: Work, Pumping Liquids, and Average Value</a></li>
+        </ul>
+    </nav>
+    <section id="rec-1" style="margin-bottom: 48px;" aria-labelledby="rec-1-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0;">
+            <h2 id="rec-1-heading" style="margin: 0; font-size: 1.4rem; color: #ffffff;">Recitation 1: Approximating Areas, Definite Integrals, and FTC</h2>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 1: Riemann Sums &amp; Monotonicity</h3>
+                <p>Consider the function \(f(x) = 12 - x^2\) on the interval \([0, 3]\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Divide \([0, 3]\) into \(n = 3\) equal subintervals. Determine the subinterval width \(\Delta x\) and list the partition points \(x_0, x_1, x_2, x_3\).</li>
+                    <li>Compute the Right-endpoint approximation \(R_3\) for the area under the curve.</li>
+                    <li>Is \(R_3\) an overestimate or an underestimate of the true area under \(f(x)\) on \([0, 3]\)? Explain using the monotonicity of \(f(x)\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>The subinterval width is: $$\Delta x = \frac{b - a}{n} = \frac{3 - 0}{3} = 1$$ The partition grid points are: $$x_0 = 0, \quad x_1 = 1, \quad x_2 = 2, \quad x_3 = 3$$</li>
+                            <li>The right endpoints are \(x_1 = 1\), \(x_2 = 2\), and \(x_3 = 3\): $$\begin{aligned} R_3 &amp;= \sum_{i=1}^3 f(x_i)\,\Delta x = \left[ f(1) + f(2) + f(3) \right] \cdot 1 \\ &amp;= (12 - 1^2) + (12 - 2^2) + (12 - 3^2) \\ &amp;= 11 + 8 + 3 = 22 \end{aligned}$$</li>
+                            <li>Since \(f'(x) = -2x \le 0\) on \([0, 3]\), the function \(f(x)\) is <strong>decreasing</strong> on the interval. For a decreasing function, the right endpoint always attains the minimum value on each subinterval, which makes \(R_3\) an <strong>underestimate</strong>.</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 2: Geometric Integrals &amp; Properties</h3>
+                <p>Evaluate the following definite integrals using geometric formulas and basic properties of integrals:</p>
+                <ol style="padding-left: 20px;">
+                    <li>\(\displaystyle \int_{-3}^3 \left( 2\sqrt{9 - x^2} - 4 \right) dx\)</li>
+                    <li>If \(\displaystyle \int_{-1}^5 f(x)\,dx = 14\) and \(\displaystyle \int_{2}^5 f(x)\,dx = -3\), find the value of \(\displaystyle \int_{-1}^2 3f(x)\,dx\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Using the sum/difference and constant multiple properties: $$\int_{-3}^3 \left( 2\sqrt{9 - x^2} - 4 \right) dx = 2\int_{-3}^3 \sqrt{9 - x^2}\,dx - \int_{-3}^3 4\,dx$$ The term \(\int_{-3}^3 \sqrt{9 - x^2}\,dx\) represents the area of a semicircle with radius \(r = 3\): $$\text{Area} = \frac{1}{2}\pi r^2 = \frac{1}{2}\pi (3^2) = \frac{9\pi}{2}$$ By the Constant Rule, \(\int_{-3}^3 4\,dx = 4(3 - (-3)) = 24\). Thus: $$\int_{-3}^3 \left( 2\sqrt{9 - x^2} - 4 \right) dx = 2\left(\frac{9\pi}{2}\right) - 24 = 9\pi - 24$$</li>
+                            <li>By interval additivity: $$\int_{-1}^5 f(x)\,dx = \int_{-1}^2 f(x)\,dx + \int_2^5 f(x)\,dx$$ Substituting the given values: $$14 = \int_{-1}^2 f(x)\,dx + (-3) \implies \int_{-1}^2 f(x)\,dx = 17$$ Applying the Constant Multiple Rule: $$\int_{-1}^2 3f(x)\,dx = 3 \int_{-1}^2 f(x)\,dx = 3(17) = 51$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 3: Fundamental Theorem of Calculus, Part 1</h3>
+                <p>Find the derivative \(\displaystyle \frac{dy}{dx}\) for each of the following functions using the Fundamental Theorem of Calculus, Part 1 (FTC 1):</p>
+                <ol style="padding-left: 20px;">
+                    <li>\(y = \displaystyle \int_x^4 \frac{t^2}{1 + \cos^2(t)}\,dt\)</li>
+                    <li>\(y = \displaystyle \int_{0}^{x^3} \sqrt{1 + 2t^2}\,dt\)</li>
+                    <li>\(y = \displaystyle \int_{2x}^{x^2} \tan(t)\,dt\)</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Reversing the limits of integration introduces a negative sign: $$y = -\int_4^x \frac{t^2}{1 + \cos^2(t)}\,dt \implies \frac{dy}{dx} = -\frac{x^2}{1 + \cos^2(x)}$$</li>
+                            <li>Let \(u(x) = x^3\). Applying FTC 1 along with the Chain Rule: $$\frac{dy}{dx} = \sqrt{1 + 2(x^3)^2} \cdot \frac{d}{dx}(x^3) = 3x^2\sqrt{1 + 2x^6}$$</li>
+                            <li>Split the integral at a constant (e.g., \(c = 0\)): $$y = \int_{2x}^0 \tan(t)\,dt + \int_0^{x^2} \tan(t)\,dt = -\int_0^{2x} \tan(t)\,dt + \int_0^{x^2} \tan(t)\,dt$$ Differentiating both parts using the Chain Rule: $$\begin{aligned} \frac{dy}{dx} &amp;= -\tan(2x)\cdot \frac{d}{dx}(2x) + \tan(x^2)\cdot \frac{d}{dx}(x^2) \\ &amp;= 2x\tan(x^2) - 2\tan(2x) \end{aligned}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 4: Evaluating Integrals with FTC 2</h3>
+                <p>Evaluate each definite integral algebraically using the Fundamental Theorem of Calculus, Part II (FTC 2):</p>
+                <ol style="padding-left: 20px;">
+                    <li>\(\displaystyle \int_1^4 \frac{3x^2 - 2\sqrt{x}}{x}\,dx\)</li>
+                    <li>\(\displaystyle \int_0^{\pi/4} \left( \sec^2\theta + 4\cos\theta \right) d\theta\)</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Rewrite the integrand by dividing each term by \(x\): $$\frac{3x^2 - 2x^{1/2}}{x} = 3x - 2x^{-1/2}$$ Applying the Power Rule: $$\begin{aligned} \int_1^4 \left( 3x - 2x^{-1/2} \right) dx &amp;= \left[ \frac{3}{2}x^2 - 4x^{1/2} \right]_1^4 \\ &amp;= \left( \frac{3}{2}(4)^2 - 4\sqrt{4} \right) - \left( \frac{3}{2}(1)^2 - 4\sqrt{1} \right) \\ &amp;= (24 - 8) - \left( \frac{3}{2} - 4 \right) \\ &amp;= 16 - \left(-\frac{5}{2}\right) = \frac{37}{2} \end{aligned}$$</li>
+                            <li>Antidifferentiating term-by-term: $$\begin{aligned} \int_0^{\pi/4} \left( \sec^2\theta + 4\cos\theta \right) d\theta &amp;= \left[ \tan\theta + 4\sin\theta \right]_0^{\pi/4} \\ &amp;= \left( \tan\left(\frac{\pi}{4}\right) + 4\sin\left(\frac{\pi}{4}\right) \right) - \left( \tan(0) + 4\sin(0) \right) \\ &amp;= \left( 1 + 4\cdot\frac{\sqrt{2}}{2} \right) - 0 = 1 + 2\sqrt{2} \end{aligned}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 5: Area Accumulation Functions</h3>
+                <p>Let \(g(x) = \displaystyle \int_0^x f(t)\,dt\) for \(x \in [0, 6]\), where the graph of \(f(t)\) consists of two line segments: from \((0, 2)\) to \((4, -2)\), and from \((4, -2)\) to \((6, 0)\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the values of \(g(0)\) and \(g(2)\).</li>
+                    <li>At what point \(x \in (0, 6)\) does \(g(x)\) attain its absolute maximum? Justify your answer using \(g'(x)\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Evaluating at the endpoints:
+                                <ul style="padding-left: 20px; margin-bottom: 8px;">
+                                    <li>\(g(0) = \displaystyle \int_0^0 f(t)\,dt = 0\).</li>
+                                    <li>The line segment connecting \((0, 2)\) to \((4, -2)\) has the equation \(y = -\frac{4}{4}t + 2 = 2 - t\), which crosses the \(t\)-axis at \(t = 2\). On \([0, 2]\), the region is a triangle with base \(2\) and height \(2\): $$g(2) = \frac{1}{2}(2)(2) = 2$$</li>
+                                </ul>
+                            </li>
+                            <li>By FTC 1, \(g'(x) = f(x)\):
+                                <ul style="padding-left: 20px;">
+                                    <li>For \(x \in (0, 2)\), \(g'(x) = f(x) &gt; 0\), so \(g(x)\) is increasing.</li>
+                                    <li>For \(x \in (2, 6)\), \(g'(x) = f(x) &lt; 0\), so \(g(x)\) is decreasing.</li>
+                                </ul>
+                                Therefore, \(g(x)\) achieves its <strong>absolute maximum at \(x = 2\)</strong>.
+                            </li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="rec-2" style="margin-bottom: 48px;" aria-labelledby="rec-2-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0;">
+            <h2 id="rec-2-heading" style="margin: 0; font-size: 1.4rem; color: #ffffff;">Recitation 2: Net Change, Substitution, and Areas Between Curves</h2>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 1: Displacement vs. Total Distance Traveled</h3>
+                <p>A particle moves along a horizontal line with velocity \(v(t) = 3t^2 - 12t + 9\) (in \(\text{m/s}\)) for \(t \in [0, 4]\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the displacement of the particle over the time interval \([0, 4]\).</li>
+                    <li>Find the total distance traveled by the particle over \([0, 4]\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>By the Net Change Theorem, displacement is the definite integral of velocity: $$\begin{aligned} \text{Displacement} &amp;= \int_0^4 (3t^2 - 12t + 9)\,dt = \left[ t^3 - 6t^2 + 9t \right]_0^4 \\ &amp;= (4^3 - 6(4^2) + 9(4)) - 0 = 64 - 96 + 36 = 4\text{ meters} \end{aligned}$$</li>
+                            <li>Find turning points where \(v(t) = 0\): $$v(t) = 3(t^2 - 4t + 3) = 3(t - 1)(t - 3) = 0 \implies t = 1, \; t = 3$$
+                                <ul style="padding-left: 20px; margin: 6px 0;">
+                                    <li>On \((0, 1)\): \(v(t) &gt; 0\) (moving right)</li>
+                                    <li>On \((1, 3)\): \(v(t) &lt; 0\) (moving left)</li>
+                                    <li>On \((3, 4)\): \(v(t) &gt; 0\) (moving right)</li>
+                                </ul>
+                                Split the integral and evaluate each segment: $$\int_0^1 v(t)\,dt = \left[ t^3 - 6t^2 + 9t \right]_0^1 = 4$$ $$\int_1^3 v(t)\,dt = \left[ t^3 - 6t^2 + 9t \right]_1^3 = 0 - 4 = -4$$ $$\int_3^4 v(t)\,dt = \left[ t^3 - 6t^2 + 9t \right]_3^4 = 4 - 0 = 4$$ $$\text{Total Distance} = |4| + |-4| + |4| = 4 + 4 + 4 = 12\text{ meters}$$
+                            </li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 2: Definite Substitution &amp; Algebraic Back-Substitution</h3>
+                <p>Evaluate the definite integral:</p>
+                $$\int_0^3 x\sqrt{x + 1}\,dx$$<details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <p>Let \(u = x + 1 \implies x = u - 1\) and \(du = dx\).</p>
+                        <p>Transform the limits of integration:</p>
+                        <ul style="padding-left: 20px; margin-bottom: 8px;">
+                            <li>Lower limit: \(x = 0 \implies u = 0 + 1 = 1\)</li>
+                            <li>Upper limit: \(x = 3 \implies u = 3 + 1 = 4\)</li>
+                        </ul>
+                        $$\begin{aligned} \int_0^3 x\sqrt{x + 1}\,dx &amp;= \int_1^4 (u - 1)\sqrt{u}\,du = \int_1^4 \left( u^{3/2} - u^{1/2} \right) du \\ &amp;= \left[ \frac{2}{5}u^{5/2} - \frac{2}{3}u^{3/2} \right]_1^4 \\ &amp;= \left( \frac{2}{5}(4^{5/2}) - \frac{2}{3}(4^{3/2}) \right) - \left( \frac{2}{5}(1^{5/2}) - \frac{2}{3}(1^{3/2}) \right) \\ &amp;= \left( \frac{64}{5} - \frac{16}{3} \right) - \left( \frac{2}{5} - \frac{2}{3} \right) = \frac{112}{15} - \left(-\frac{4}{15}\right) = \frac{116}{15} \end{aligned}$$
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 3: Indefinite Substitution into Inverse Tangent</h3>
+                <p>Evaluate the indefinite integral:</p>
+                $$\int \frac{x}{1 + x^4}\,dx$$<details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <p>Rewrite the integrand as \(\displaystyle\int \frac{x}{1 + (x^2)^2}\,dx\).</p>
+                        <p>Let \(u = x^2\), so \(du = 2x\,dx \implies x\,dx = \frac{1}{2}\,du\):</p>
+                        $$\int \frac{x}{1 + (x^2)^2}\,dx = \frac{1}{2}\int \frac{1}{1 + u^2}\,du = \frac{1}{2}\tan^{-1}(u) + C = \frac{1}{2}\tan^{-1}(x^2) + C$$
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 4: Area Between Curves via Horizontal Slicing</h3>
+                <p>Find the area of the region enclosed by the curves \(x = 3 - y^2\) and \(x = y + 1\).</p>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <p><strong>Step 1: Find points of intersection in \(y\):</strong></p>
+                        $$3 - y^2 = y + 1 \implies y^2 + y - 2 = 0 \implies (y + 2)(y - 1) = 0 \implies y = -2, \; y = 1$$
+                        <p><strong>Step 2: Compare boundaries:</strong> For \(y = 0 \in (-2, 1)\), \(x_{\text{right}} = 3 - y^2\) and \(x_{\text{left}} = y + 1\).</p>
+                        <p><strong>Step 3: Integrate with respect to \(y\):</strong></p>
+                        $$\begin{aligned} A &amp;= \int_{-2}^1 \left[ (3 - y^2) - (y + 1) \right] dy = \int_{-2}^1 (2 - y - y^2)\,dy \\ &amp;= \left[ 2y - \frac{y^2}{2} - \frac{y^3}{3} \right]_{-2}^1 \\ &amp;= \left( 2 - \frac{1}{2} - \frac{1}{3} \right) - \left( 2(-2) - \frac{(-2)^2}{2} - \frac{(-2)^3}{3} \right) \\ &amp;= \frac{7}{6} - \left( -4 - 2 + \frac{8}{3} \right) = \frac{7}{6} - \left(-\frac{10}{3}\right) = \frac{7}{6} + \frac{20}{6} = \frac{27}{6} = \frac{9}{2} \end{aligned}$$
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="rec-3" style="margin-bottom: 48px;" aria-labelledby="rec-3-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0;">
+            <h2 id="rec-3-heading" style="margin: 0; font-size: 1.4rem; color: #ffffff;">Recitation 3: Volumes of Solids: Cross-Sections, Disks, Washers, and Shells</h2>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 1: Slicing with Equilateral Triangle Cross-Sections</h3>
+                <p>The base of a solid is the region in the \(xy\)-plane bounded by the parabola \(y = 4 - x^2\) and the \(x\)-axis. Cross-sections of the solid perpendicular to the \(x\)-axis are equillateral triangles with one side lying in the base.</p>
+                <ol style="padding-left: 20px;">
+                    <li>Express the base side length \(s(x)\) of an arbitrary cross-section at position \(x\).</li>
+                    <li>Find the cross-sectional area function \(A(x)\).</li>
+                    <li>Set up and evaluate a definite integral to determine the total volume of the solid.</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>The base region intersects the \(x\)-axis where \(4 - x^2 = 0 \implies x = \pm 2\). For any \(x \in [-2, 2]\), the vertical strip extends from \(y = 0\) to \(y = 4 - x^2\). Thus, the side length of the equilateral triangle cross-section is: $$s(x) = (4 - x^2) - 0 = 4 - x^2$$</li>
+                            <li>The area of an equilateral triangle with side length \(s\) is \(A = \frac{\sqrt{3}}{4}s^2\). Substituting \(s(x) = 4 - x^2\): $$A(x) = \frac{\sqrt{3}}{4}[s(x)]^2 = \frac{\sqrt{3}}{4}(4 - x^2)^2 = \frac{\sqrt{3}}{4}(16 - 8x^2 + x^4)$$</li>
+                            <li>By the cross-sectional slicing principle, integrating from \(x = -2\) to \(x = 2\) and utilizing symmetry: $$\begin{aligned} V &amp;= \int_{-2}^2 A(x)\,dx = 2 \int_0^2 \frac{\sqrt{3}}{4}(16 - 8x^2 + x^4)\,dx \\ &amp;= \frac{\sqrt{3}}{2} \left[ 16x - \frac{8}{3}x^3 + \frac{x^5}{5} \right]_0^2 \\ &amp;= \frac{\sqrt{3}}{2} \left( 32 - \frac{64}{3} + \frac{32}{5} \right) \\ &amp;= \frac{\sqrt{3}}{2} \left( \frac{480 - 320 + 96}{15} \right) = \frac{\sqrt{3}}{2} \left( \frac{256}{15} \right) = \frac{128\sqrt{3}}{15} \end{aligned}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 2: Disks vs. Washers on Shifted Axes</h3>
+                <p>Let \(\mathcal{R}\) be the planar region bounded by the curves \(y = \sqrt{x}\), \(y = 2\), and the \(y\)-axis (\(x = 0\)).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Use the <strong>Disk Method</strong> (integrating with respect to \(y\)) to compute the volume of the solid generated by rotating \(\mathcal{R}\) about the \(y\)-axis.</li>
+                    <li>Use the <strong>Washer Method</strong> (integrating with respect to \(x\)) to compute the volume of the solid generated by revolving \(\mathcal{R}\) about the horizontal line \(y = 2\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>The curves intersetc where \(\sqrt{x} = 2 \implies x = 4\), with \(y\) spanning the interval \([0, 2]\). Rotating about the vertical \(y\)-axis, horizontal cross-sections are circular disks of thickness \(dy\). Expressing \(x\) in terms of \(y\): $$y = \sqrt{x} \implies x = y^2$$ The disk radius is \(R(y) = y^2 - 0 = y^2\). The volume is: $$V = \pi \int_0^2 [R(y)]^2\,dy = \pi \int_0^2 (y^2)^2\,dy = \pi \int_0^2 y^4\,dy = \pi \left[ \frac{y^5}{5} \right]_0^2 = \frac{32\pi}{5}$$</li>
+                            <li>When revolving \(\mathcal{R}\) about the upper boundary \(y = 2\), vertical slices of thickness \(dx\) create circular disks (with zero inner radius) across \(x \in [0, 4]\). The radius is: $$R(x) = y_{\text{axis}} - y_{\text{bottom}} = 2 - \sqrt{x}$$ The resulting volume is: $$\begin{aligned} V &amp;= \pi \int_0^4 [R(x)]^2\,dx = \pi \int_0^4 (2 - \sqrt{x})^2\,dx \\ &amp;= \pi \int_0^4 (4 - 4x^{1/2} + x)\,dx \\ &amp;= \pi \left[ 4x - \frac{8}{3}x^{3/2} + \frac{x^2}{2} \right]_0^4 \\ &amp;= \pi \left( 16 - \frac{8}{3}(8) + 8 \right) = \pi \left( 24 - \frac{64}{3} \right) = \frac{8\pi}{3} \end{aligned}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 3: The Washer Method on Shifted Axes</h3>
+                <p>Consider the finite region \(\mathcal{R}\) enclosed between the parabola \(y = 2x - x^2\) and the line \(y = x\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Determine the intersection points of the two curves.</li>
+                    <li>Set up and evaluate an integral using the <strong>Washer Method</strong> for the volume obtained by revolving \(\mathcal{R}\) about the \(x\)-axis.</li>
+                    <li>Set up and evaluate an integral using the <strong>Washer Method</strong> for the volume obtained by revolving \(\mathcal{R}\) about the horizontal line \(y = -1\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Equating the functions: $$2x - x^2 = x \implies x - x^2 = 0 \implies x(1 - x) = 0 \implies x = 0 \quad \text{and} \quad x = 1$$ On the interval \((0, 1)\), \(2x - x^2 &gt; x\), so \(y_{\text{top}} = 2x - x^2\) and \(y_{\text{bottom}} = x\).</li>
+                            <li>Revolved about the \(x\)-axis (\(y = 0\)): $$R_{\text{outer}}(x) = 2x - x^2, \quad r_{\text{inner}}(x) = x$$ Evaluating the washer integral: $$\begin{aligned} V &amp;= \pi \int_0^1 \left( [R_{\text{outer}}(x)]^2 - [r_{\text{inner}}(x)]^2 \right) dx \\ &amp;= \pi \int_0^1 \left( (2x - x^2)^2 - x^2 \right) dx \\ &amp;= \pi \int_0^1 \left( 4x^2 - 4x^3 + x^4 - x^2 \right) dx = \pi \int_0^1 \left( x^4 - 4x^3 + 3x^2 \right) dx \\ &amp;= \pi \left[ \frac{x^5}{5} - x^4 + x^3 \right]_0^1 = \pi \left( \frac{1}{5} - 1 + 1 \right) = \frac{\pi}{5} \end{aligned}$$</li>
+                            <li>Revolved about the line \(y = -1\), the radii are measured from the axis of rotation: $$\begin{aligned} R_{\text{outer}}(x) &amp;= (2x - x^2) - (-1) = 2x - x^2 + 1 \\ r_{\text{inner}}(x) &amp;= x - (-1) = x + 1 \end{aligned}$$ Subtracting the squared radii: $$\begin{aligned} [R_{\text{outer}}(x)]^2 - [r_{\text{inner}}(x)]^2 &amp;= (1 + 2x - x^2)^2 - (x + 1)^2 \\ &amp;= (1 + 4x^2 + x^4 + 4x - 2x^2 - 4x^3) - (x^2 + 2x + 1) \\ &amp;= (x^4 - 4x^3 + 2x^2 + 4x + 1) - (x^2 + 2x + 1) \\ &amp;= x^4 - 4x^3 + x^2 + 2x \end{aligned}$$ Integrating across \([0, 1]\): $$\begin{aligned} V &amp;= \pi \int_0^1 (x^4 - 4x^3 + x^2 + 2x)\,dx \\ &amp;= \pi \left[ \frac{x^5}{5} - x^4 + \frac{x^3}{3} + x^2 \right]_0^1 \\ &amp;= \pi \left( \frac{1}{5} - 1 + \frac{1}{3} + 1 \right) = \pi \left( \frac{1}{5} + \frac{1}{3} \right) = \frac{8\pi}{15} \end{aligned}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 4: Cylindrical Shells vs. Washer Selection</h3>
+                <p>Let \(\mathcal{S}\) be the solid generated by rotating the region under \(y = \sin(x^2)\) on the interval \([0, \sqrt{\pi}]\) and above the \(x\)-axis about the \(y\)-axis.</p>
+                <ol style="padding-left: 20px;">
+                    <li>Explain why the Method of Cylindrical Shells is better suited for this volume than the Washer Method.</li>
+                    <li>Set up the volume integral using the <strong>Method of Cylindrical Shells</strong>.</li>
+                    <li>Evaluate the integral using a substitution.</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Slicing perpendicular to the \(y\)-axis (the Washer Method) requires solving \(y = \sin(x^2)\) for \(x\) in terms of \(y\) (\(x = \sqrt{\arcsin y}\)), which splits into separate boundary branches and yields an inverse trigonometric integral that is difficult to evaluate directly. By contrast, Cylindrical Shells uses vertical slices of thickness \(dx\), which directly pairs the factor \(x\) from the circumference with \(x\,dx\) from the argument of \(\sin(x^2)\).</li>
+                            <li>For a vertical strip at coordinate \(x \in [0, \sqrt{\pi}]\): $$\text{Radius} = x - 0 = x, \quad \text{Height} = \sin(x^2) - 0 = \sin(x^2), \quad \text{Thickness} = dx$$ The volume integral is: $$V = \int_0^{\sqrt{\pi}} 2\pi (\text{radius})(\text{height})\,dx = 2\pi \int_0^{\sqrt{\pi}} x\sin(x^2)\,dx$$</li>
+                            <li>Let \(u = x^2 \implies du = 2x\,dx \implies x\,dx = \frac{1}{2}\,du\). Transforming the integration bounds:
+                                <ul style="padding-left: 20px; margin-bottom: 8px;">
+                                    <li>When \(x = 0 \implies u = 0^2 = 0\).</li>
+                                    <li>When \(x = \sqrt{\pi} \implies u = (\sqrt{\pi})^2 = \pi\).</li>
+                                </ul>
+                                Evaluatting: $$\begin{aligned} V &amp;= 2\pi \int_0^\pi \sin(u) \cdot \left(\frac{1}{2}\,du\right) = \pi \int_0^\pi \sin(u)\,du \\ &amp;= \pi \Big[ -\cos(u) \Big]_0^\pi = \pi \Big( -\cos(\pi) - (-\cos(0)) \Big) \\ &amp;= \pi \Big( -(-1) + 1 \Big) = 2\pi \end{aligned}$$
+                            </li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="rec-4" style="margin-bottom: 48px;" aria-labelledby="rec-4-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0;">
+            <h2 id="rec-4-heading" style="margin: 0; font-size: 1.4rem; color: #ffffff;">Recitation 4: Work, Pumping Liquids, and Average Value</h2>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 1: Leaking Bucket Work</h3>
+                <p>A \(5\text{ lb}\) bucket containing \(60\text{ lbs}\) of sand is lifted vertically from the ground to a construction platform \(20\text{ ft}\) high at a constant rate of \(2\text{ ft/s}\). Sand leaks out through a hole at a constant rate of \(1.5\text{ lb/s}\). Assuming the rope has negligible weight, find the total work done lifting the bucket to the platform.</p>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <p>Let \(y\) denote the height of the bucket above the ground in feet, so \(y \in [0, 20]\).</p>
+                        <p><strong>Step 1: Determine the force function \(F(y)\).</strong></p>
+                        <ul style="padding-left: 20px; margin-bottom: 12px;">
+                            <li>At a constant speed of \(2\text{ ft/s}\), the time elapsed to reach height \(y\) is: $$t = \frac{y}{2}\text{ seconds}.$$</li>
+                            <li>Sand leaks at \(1.5\text{ lb/s}\), so the sand lost after reaching height \(y\) is: $$\text{Sand lost} = (1.5\text{ lb/s}) \cdot \left(\frac{y}{2}\text{ s}\right) = 0.75y\text{ lbs}.$$</li>
+                            <li>The weight of the sand remaining at height \(y\) is \(60 - 0.75y\text{ lbs}\). Adding the \(5\text{ lb}\) empty bucket gives the total force: $$F(y) = (60 - 0.75y) + 5 = 65 - 0.75y\text{ lbs}.$$</li>
+                        </ul>
+                        <p><strong>Step 2: Evaluate the work integral.</strong></p>
+                        $$\begin{aligned} W &amp;= \int_0^{20} F(y)\,dy = \int_0^{20} (65 - 0.75y)\,dy \\ &amp;= \left[ 65y - \frac{0.75y^2}{2} \right]_0^{20} \\ &amp;= 65(20) - 0.375(20^2) \\ &amp;= 1300 - 150 = 1150\text{ ft-lb}. \end{aligned}$$
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 2: Pumping Out a Conical Tank</h3>
+                <p>An inverted conical water tank (vertex pointing downward) has a total height of \(6\text{ m}\) and a top circular radius of \(2\text{ m}\). The tank is initially filled with water to a depth of \(4\text{ m}\). Find the work required to pump all of the water out over the top rim of the tank. (Use water density \(\rho = 1000\text{ kg/m}^3\) and \(g = 9.8\text{ m/s}^2\)).</p>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <p><strong>Step 1: Coordinate Setup.</strong><br />Place the origin \(y = 0\) at the bottom vertex of the cone and the top rim at \(y = 6\). The water layer occupies the interval \(y \in [0, 4]\).</p>
+                        <p><strong>Step 2: Geometry of a Horizontal Slice.</strong><br />At height \(y\), let \(r(y)\) be the radius of the circular water slice. By similar triangles: $$\frac{r(y)}{y} = \frac{2}{6} \implies r(y) = \frac{1}{3}y.$$ For a thin horizontal slice of thickness \(dy\): $$\begin{aligned} dV &amp;= \pi [r(y)]^2\,dy = \pi \left(\frac{y}{3}\right)^2 dy = \frac{\pi}{9}y^2\,dy\text{ m}^3, \\ dm &amp;= \rho\,dV = 1000 \cdot \left(\frac{\pi}{9}y^2\,dy\right) = \frac{1000\pi}{9}y^2\,dy\text{ kg}, \\ dF &amp;= dm \cdot g = \frac{1000\pi}{9}y^2(9.8)\,dy = \frac{9800\pi}{9}y^2\,dy\text{ N}. \end{aligned}$$</p>
+                        <p><strong>Step 3: Displacement and Integration.</strong><br />A slice at height \(y\) must be lifted to the rim at \(y = 6\), so the vertical displacement is \(6 - y\): $$\begin{aligned} W &amp;= \int_0^4 dF \cdot (6 - y) = \int_0^4 \frac{9800\pi}{9}y^2(6 - y)\,dy \\ &amp;= \frac{9800\pi}{9} \int_0^4 (6y^2 - y^3)\,dy \\ &amp;= \frac{9800\pi}{9} \left[ 2y^3 - \frac{y^4}{4} \right]_0^4 \\ &amp;= \frac{9800\pi}{9} \left( 2(64) - \frac{256}{4} \right) \\ &amp;= \frac{9800\pi}{9} (128 - 64) = \frac{9800\pi(64)}{9} = \frac{627200\pi}{9}\text{ J} \approx 2.19 \times 10^5\text{ J}. \end{aligned}$$</p>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 3: Average Value via Substitution</h3>
+                <p>Find the average value of the function \(f(x) = x\sqrt{x^2 + 9}\) on the interval \([0, 4]\).</p>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <p>By definition, the average value of \(f(x)\) on \([a, b]\) is: $$f_{\text{avg}} = \frac{1}{b - a} \int_a^b f(x)\,dx = \frac{1}{4 - 0} \int_0^4 x\sqrt{x^2 + 9}\,dx.$$ Use the Substitution Rule:</p>
+                        <ul style="padding-left: 20px; margin-bottom: 12px;">
+                            <li>Let \(u = x^2 + 9 \implies du = 2x\,dx \implies x\,dx = \frac{1}{2}\,du\).</li>
+                            <li>When \(x = 0 \implies u = 0^2 + 9 = 9\).</li>
+                            <li>When \(x = 4 \implies u = 4^2 + 9 = 25\).</li>
+                        </ul>
+                        <p>Evaluating the definite integral: $$\begin{aligned} \int_0^4 x\sqrt{x^2 + 9}\,dx &amp;= \frac{1}{2} \int_9^{25} u^{1/2}\,du = \frac{1}{2} \left[ \frac{2}{3}u^{3/2} \right]_9^{25} \\ &amp;= \frac{1}{3} \left( 25^{3/2} - 9^{3/2} \right) = \frac{1}{3}(125 - 27) = \frac{98}{3}. \end{aligned}$$ Multiply by \(\frac{1}{b - a}\): $$f_{\text{avg}} = \frac{1}{4} \left( \frac{98}{3} \right) = \frac{49}{6}.$$</p>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 4: Mean Value Theorem for Integrals</h3>
+                <p>Consider the function \(f(x) = 3x^2 - 2x + 1\) on \([0, 2]\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Compute the average value \(f_{\text{avg}}\) on \([0, 2]\).</li>
+                    <li>Find all values of \(c \in [0, 2]\) guaranteed by the Mean Value Theorem for Integrals such that \(f(c) = f_{\text{avg}}\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>First evaluate the integral: $$\begin{aligned} \int_0^2 (3x^2 - 2x + 1)\,dx &amp;= \left[ x^3 - x^2 + x \right]_0^2 \\ &amp;= (2^3 - 2^2 + 2) - 0 = 8 - 4 + 2 = 6. \end{aligned}$$ The average value is: $$f_{\text{avg}} = \frac{1}{2 - 0} \int_0^2 (3x^2 - 2x + 1)\,dx = \frac{1}{2}(6) = 3.$$</li>
+                            <li>Set \(f(c) = f_{\text{avg}} = 3\): $$3c^2 - 2c + 1 = 3 \implies 3c^2 - 2c - 2 = 0.$$ Applying the quadratic formula: $$c = \frac{-(-2) \pm \sqrt{(-2)^2 - 4(3)(-2)}}{2(3)} = \frac{2 \pm \sqrt{4 + 24}}{6} = \frac{2 \pm \sqrt{28}}{6} = \frac{1 \pm \sqrt{7}}{3}.$$ Testing each solution:
+                                <ul style="padding-left: 20px; margin-top: 8px;">
+                                    <li>\(c_1 = \frac{1 + \sqrt{7}}{3} \approx \frac{1 + 2.646}{3} \approx 1.215 \in [0, 2]\).</li>
+                                    <li>\(c_2 = \frac{1 - \sqrt{7}}{3} \approx \frac{1 - 2.646}{3} \approx -0.549 \notin [0, 2]\).</li>
+                                </ul>
+                                Thus, the unique value guaranteed by the theorem is \(c = \frac{1 + \sqrt{7}}{3}\).
+                            </li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 5: Time-Weighted Averages</h3>
+                <p>An electric motor runs continuously for 12 hours. During the first 4 hours (\(0 \le t \le 4\)), its average operating temperature is \(150^\circ\text{F}\). During the remaining 8 hours (\(4 &lt; t \le 12\)), its average operating temperature is \(210^\circ\text{F}\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the average operating temperature of the motor across the entire 12-hour duration.</li>
+                    <li>Explain why the overall average is not simply \(\frac{150 + 210}{2} = 180^\circ\text{F}\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Using the definition of average value on each subinterval: $$\begin{aligned} \frac{1}{4 - 0}\int_0^4 T(t)\,dt = 150 &amp;\implies \int_0^4 T(t)\,dt = 4(150) = 600^\circ\text{F}\cdot\text{hr}, \\ \frac{1}{12 - 4}\int_4^{12} T(t)\,dt = 210 &amp;\implies \int_4^{12} T(t)\,dt = 8(210) = 1680^\circ\text{F}\cdot\text{hr}. \end{aligned}$$ By interval additivity, the total accumulation over \([0, 12]\) is: $$\int_0^{12} T(t)\,dt = \int_0^4 T(t)\,dt + \int_4^{12} T(t)\,dt = 600 + 1680 = 2280^\circ\text{F}\cdot\text{hr}.$$ The overall average temperature is: $$T_{\text{avg}} = \frac{1}{12 - 0}\int_0^{12} T(t)\,dt = \frac{2280}{12} = 190^\circ\text{F}.$$</li>
+                            <li>The unweighted mean \(\frac{150 + 210}{2} = 180^\circ\text{F}\) assumes the motor operated at each temperature for an equal duration. However, the motor operated at \(210^\circ\text{F}\) for \(8\) hours (two-thirds of the time) and at \(150^\circ\text{F}\) for only \(4\) hours (one-third of the time). The integral computes a continuous time-weighted mean: $$T_{\text{avg}} = \frac{4}{12}(150) + \frac{8}{12}(210) = \frac{1}{3}(150) + \frac{2}{3}(210) = 50 + 140 = 190^\circ\text{F}.$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+</div>
