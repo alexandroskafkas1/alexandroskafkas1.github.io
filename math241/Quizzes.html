@@ -1,0 +1,230 @@
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #2d3748; max-width: 900px; margin: 0 auto; padding: 20px;">
+    <header style="border-bottom: 3px solid #2b6cb0; padding-bottom: 12px; margin-bottom: 24px;">
+        <p style="color: #1a365d; margin: 0 0 6px 0; font-size: 1.85rem;">Math 241: Quizzes &amp; Solutions</p>
+        <p style="margin: 0; color: #4a5568; font-size: 1rem;">Calculus III &bull; Multivariable Calculus &amp; Vectors</p>
+    </header>
+    <nav style="background-color: #ebf8ff; border-radius: 8px; padding: 18px 24px; margin-bottom: 32px; border: 1px solid #bee3f8;" aria-label="Quiz Navigation Index">
+        <h2 style="color: #2b6cb0; font-size: 1.2rem; margin-top: 0; margin-bottom: 10px;">Quiz Archive Index</h2>
+        <ul style="margin: 0; padding-left: 20px; color: #2c5282;">
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#quiz-1">Quiz 1: Vector Arithmetic, Dot Product, Cross Product, &amp; Planes (08/25/2026)</a></li>
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#quiz-2">Quiz 2: Vector Functions, Domain, Parametrization, &amp; Tangent Lines (09/01/2026)</a></li>
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#quiz-3">Quiz 3: Arc Length, Scalar Line Integrals, &amp; Projectile Motion (09/08/2026)</a></li>
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#quiz-4">Quiz 4: Level Curves, Multivariable Chain Rule, &amp; Implicit Differentiation (09/15/2026)</a></li>
+        </ul>
+    </nav>
+    <section id="quiz-1" style="margin-bottom: 48px;" aria-labelledby="quiz-1-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h2 id="quiz-1-heading" style="margin: 0; font-size: 1.35rem; color: #ffffff;">Quiz 1: Vectors, Dot Product, Cross Product, and Planes</h2>
+            <span style="font-size: 0.95rem; background-color: #2c5282; padding: 3px 8px; border-radius: 4px;">Date: 08/25/2026</span>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 1</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[8 points]</span>
+                </div>
+                <p>Let \(\mathbf{u} = \langle 3, -2, 1 \rangle\) and \(\mathbf{v} = \langle 1, 2, 4 \rangle\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Compute the vector \(2\mathbf{u} - 3\mathbf{v}\) in component form.</li>
+                    <li>Compute the dot product \(\mathbf{u} \cdot \mathbf{v}\) and determine if \(\mathbf{u}\) and \(\mathbf{v}\) are orthogonal.</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>$$\begin{aligned} 2\mathbf{u} - 3\mathbf{v} &amp;= 2\langle 3, -2, 1 \rangle - 3\langle 1, 2, 4 \rangle \\ &amp;= \langle 6, -4, 2 \rangle - \langle 3, 6, 12 \rangle = \langle 3, -10, -10 \rangle \end{aligned}$$</li>
+                            <li>$$\mathbf{u} \cdot \mathbf{v} = (3)(1) + (-2)(2) + (1)(4) = 3 - 4 + 4 = 3$$ Since \(\mathbf{u} \cdot \mathbf{v} \neq 0\), the vectors are <strong>not orthogonal</strong>.</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 2</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[12 points]</span>
+                </div>
+                <p>Consider the vectors \(\mathbf{a} = \langle 1, 2, 0 \rangle\) and \(\mathbf{b} = \langle 0, 3, 1 \rangle\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the cross product \(\mathbf{a} \times \mathbf{b}\).</li>
+                    <li>Find the scalar equation of the plane passing through the point \(P(2, -1, 4)\) with normal vector \(\vec{n} = \mathbf{a} \times \mathbf{b}\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>$$\mathbf{a} \times \mathbf{b} = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 1 &amp; 2 &amp; 0 \\ 0 &amp; 3 &amp; 1 \end{vmatrix} = \mathbf{i}(2 - 0) - \mathbf{j}(1 - 0) + \mathbf{k}(3 - 0) = \langle 2, -1, 3 \rangle$$</li>
+                            <li>Using point \(P(2, -1, 4)\) and normal \(\vec{n} = \langle 2, -1, 3 \rangle\): $$\begin{aligned} 2(x - 2) - 1(y - (-1)) + 3(z - 4) &amp;= 0 \\ 2x - 4 - y - 1 + 3z - 12 &amp;= 0 \\ 2x - y + 3z &amp;= 17 \end{aligned}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="quiz-2" style="margin-bottom: 48px;" aria-labelledby="quiz-2-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h2 id="quiz-2-heading" style="margin: 0; font-size: 1.35rem; color: #ffffff;">Quiz 2: Vector Functions, Domain, Parametrization, and Tangent Lines</h2>
+            <span style="font-size: 0.95rem; background-color: #2c5282; padding: 3px 8px; border-radius: 4px;">Date: 09/01/2026</span>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 1</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[8 points]</span>
+                </div>
+                <p>Answer the following questions:</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the domain of the vector-valued function \(\mathbf{r}(t) = \langle \sqrt{t+2}, \; \ln(6-t), \; 5t \rangle\). Express your answer in interval notation.</li>
+                    <li>Find a vector parametrization \(\mathbf{r}(t)\) for the curve of intersection of the circular cylinder \(x^2 + y^2 = 4\) and the plane \(z = 3x - y\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Find the domain of each component:
+                                <ul style="padding-left: 20px; margin-top: 4px; margin-bottom: 6px;">
+                                    <li>\(\sqrt{t+2} \implies t+2 \ge 0 \implies t \ge -2\)</li>
+                                    <li>\(\ln(6-t) \implies 6-t &gt; 0 \implies t &lt; 6\)</li>
+                                    <li>\(5t\) is defined for all \(t \in \mathbb{R}\)</li>
+                                </ul>
+                                Taking the intersection yields: $$\text{Domain} = [-2, 6)$$
+                            </li>
+                            <li>Parametrize the cylinder \(x^2 + y^2 = 4\) in the \(xy\)-plane: $$x(t) = 2\cos t, \quad y(t) = 2\sin t, \quad t \in [0, 2\pi)$$ Substitute into the plane equation \(z = 3x - y\): $$z(t) = 3(2\cos t) - 2\sin t = 6\cos t - 2\sin t$$ Thus, the vector parametrization is: $$\mathbf{r}(t) = \langle 2\cos t, \; 2\sin t, \; 6\cos t - 2\sin t \rangle, \quad t \in [0, 2\pi)$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 2</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[12 points]</span>
+                </div>
+                <p>Consider the curve given by \(\mathbf{r}(t) = \langle 4\cos t, \; 4\sin t, \; 3t \rangle\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the velocity vector \(\mathbf{r}'(t)\) and compute the speed \(\|\mathbf{r}'(0)\|\) at \(t = 0\).</li>
+                    <li>Find parametric equations for the tangent line to the curve at \(t = 0\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Differentiate component-wise: $$\mathbf{r}'(t) = \langle -4\sin t, \; 4\cos t, \; 3 \rangle$$ At \(t = 0\): $$\mathbf{r}'(0) = \langle -4\sin(0), \; 4\cos(0), \; 3 \rangle = \langle 0, 4, 3 \rangle$$ The speed at \(t = 0\) is: $$\|\mathbf{r}'(0)\| = \sqrt{0^2 + 4^2 + 3^2} = \sqrt{16 + 9} = \sqrt{25} = 5$$</li>
+                            <li>The base point on the curve at \(t = 0\) is: $$\mathbf{r}(0) = \langle 4\cos(0), \; 4\sin(0), \; 3(0) \rangle = \langle 4, 0, 0 \rangle$$ Using direction vector \(\mathbf{v} = \mathbf{r}'(0) = \langle 0, 4, 3 \rangle\) and parameter \(s \in \mathbb{R}\): $$x(s) = 4, \quad y(s) = 4s, \quad z(s) = 3s$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="quiz-3" style="margin-bottom: 48px;" aria-labelledby="quiz-3-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h2 id="quiz-3-heading" style="margin: 0; font-size: 1.35rem; color: #ffffff;">Quiz 3: Arc Length, Scalar Line Integrals, and Projectile Motion</h2>
+            <span style="font-size: 0.95rem; background-color: #2c5282; padding: 3px 8px; border-radius: 4px;">Date: 09/08/2026</span>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 1</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[8 points]</span>
+                </div>
+                <p>A thin metallic wire is shaped along the circular helix</p>
+                $$\mathbf{r}(t) = \langle 4\cos t, \; 4\sin t, \; 3t \rangle, \qquad 0 \le t \le \pi$$
+                <ol style="padding-left: 20px;">
+                    <li>Find the differential arc length element \(ds = \|\mathbf{r}'(t)\|\,dt\).</li>
+                    <li>If the wire has linear mass density \(\rho(x, y, z) = 2z\), evaluate the scalar line integral $$M = \int_C \rho(x, y, z)\,ds$$ to calculate the total mass of the wire.</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Differentiate component-wise: $$\mathbf{r}'(t) = \langle -4\sin t, \; 4\cos t, \; 3 \rangle$$ The speed along the helix is: $$\|\mathbf{r}'(t)\| = \sqrt{(-4\sin t)^2 + (4\cos t)^2 + 3^2} = \sqrt{16(\sin^2 t + \cos^2 t) + 9} = \sqrt{16 + 9} = 5$$ Thus, the arc length element is: $$ds = \|\mathbf{r}'(t)\|\,dt = 5\,dt$$</li>
+                            <li>Along the curve, the density is \(\rho(\mathbf{r}(t)) = 2z(t) = 2(3t) = 6t\).<br />Evaluating the scalar line integral: $$\begin{aligned} M &amp;= \int_0^\pi \rho(\mathbf{r}(t))\,\|\mathbf{r}'(t)\|\,dt \\ &amp;= \int_0^\pi (6t)(5)\,dt \\ &amp;= \int_0^\pi 30t\,dt \\ &amp;= \left[ 15t^2 \right]_0^\pi = 15\pi^2 \end{aligned}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 2</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[12 points]</span>
+                </div>
+                <p>A projectile is launched from the origin \((0, 0, 0)\) with an initial velocity of</p>
+                $$\mathbf{v}(0) = \langle 20, \; 0, \; 30 \rangle \quad \text{(in m/s)}$$
+                <p>The only acceleration acting on the projectile is downward gravity \(\mathbf{a}(t) = \langle 0, 0, -10 \rangle\text{ m/s}^2\) (neglecting air resistance).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the velocity vector \(\mathbf{v}(t)\) and position vector \(\mathbf{r}(t)\) for all \(t \ge 0\).</li>
+                    <li>Find the time \(T\) when the projectile impacts the ground (\(z = 0\)), and determine its horizontal distance from the origin at that time.</li>
+                    <li>Find the maximum height \(H\) reached by the projectile during flight.</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Integrate acceleration to find velocity: $$\mathbf{v}(t) = \int \mathbf{a}(t)\,dt = \langle 0, 0, -10t \rangle + \mathbf{C}_1$$ Using \(\mathbf{v}(0) = \langle 20, 0, 30 \rangle\), we have \(\mathbf{C}_1 = \langle 20, 0, 30 \rangle\): $$\mathbf{v}(t) = \langle 20, \; 0, \; 30 - 10t \rangle$$ Integrate velocity with initial position \(\mathbf{r}(0) = \langle 0, 0, 0 \rangle\): $$\mathbf{r}(t) = \int \mathbf{v}(t)\,dt = \langle 20t, \; 0, \; 30t - 5t^2 \rangle$$</li>
+                            <li>Set the vertical position component to zero: $$z(T) = 30T - 5T^2 = 0 \implies 5T(6 - T) = 0$$ Since \(T &gt; 0\), the flight time is \(T = 6\text{ s}\).<br />At impact, the horizontal distance along the \(x\)-axis is: $$x(6) = 20(6) = 120\text{ m}$$</li>
+                            <li>Maximum height occurs when the vertical velocity is zero: $$v_z(t) = 30 - 10t = 0 \implies t = 3\text{ s}$$ Evaluating the vertical position at \(t = 3\): $$H = z(3) = 30(3) - 5(3)^2 = 90 - 45 = 45\text{ m}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="quiz-4" style="margin-bottom: 48px;" aria-labelledby="quiz-4-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h2 id="quiz-4-heading" style="margin: 0; font-size: 1.35rem; color: #ffffff;">Quiz 4: Level Curves, Chain Rule, and Implicit Differentiation</h2>
+            <span style="font-size: 0.95rem; background-color: #2c5282; padding: 3px 8px; border-radius: 4px;">Date: 09/15/2026</span>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 1</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[8 points]</span>
+                </div>
+                <p>Consider the surface given by the equation</p>
+                $$z = 16 - x^2 - y^2$$
+                <ol style="padding-left: 20px;">
+                    <li>Find the equation of the level curve corresponding to \(z = 7\). Identify the geometric shape of this curve in the \(xy\)-plane, specifying its center and radius.</li>
+                    <li>Find the equation of the level curve corresponding to \(z = 16\). Describe what this level curve represents in the \(xy\)-plane, and explain why there are no real level curves for \(z &gt; 16\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Substitute \(z = 7\) into the surface equation: $$16 - x^2 - y^2 = 7 \implies x^2 + y^2 = 16 - 7 \implies x^2 + y^2 = 9$$ In the \(xy\)-plane, this is a <strong>circle</strong> centered at the origin \((0, 0)\) with radius \(r = \sqrt{9} = 3\).</li>
+                            <li>Substitute \(z = 16\) into the surface equation: $$16 - x^2 - y^2 = 16 \implies x^2 + y^2 = 0$$ The only real solution is the single point \((0, 0)\) at the origin (representing the maximum peak of the paraboloid).<br /><br />For \(z &gt; 16\), we have \(x^2 + y^2 = 16 - z &lt; 0\). Since the sum of squares of real numbers cannot be negative, there are no real points on the surface above \(z = 16\).</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 2</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[12 points]</span>
+                </div>
+                <p>Answer the following questions regarding the Chain Rule and implicit differentiation:</p>
+                <ol style="padding-left: 20px;">
+                    <li>Let \(z = x^2 y + 2x\), where \(x(t) = e^t\) and \(y(t) = \sin t\).
+                        <ol style="padding-left: 20px; margin-top: 4px;" type="a">
+                            <li>Write down the multivariable Chain Rule formula for \(\dfrac{dz}{dt}\) in terms of partial and ordinary derivatives.</li>
+                            <li>Compute the numerical value of \(\dfrac{dz}{dt}\) at \(t = 0\).</li>
+                        </ol>
+                    </li>
+                    <li>The equation $$x^2 y + z^3 - 3z = 5$$ defines \(z\) implicitly as a differentiable function of \(x\) and \(y\) (that is, \(z = z(x, y)\)). Find \(\dfrac{\partial z}{\partial x}\) in terms of \(x, y,\) and \(z\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>
+                                <ol style="padding-left: 20px;" type="a">
+                                    <li>The Chain Rule formula is: $$\frac{dz}{dt} = \frac{\partial z}{\partial x}\frac{dx}{dt} + \frac{\partial z}{\partial y}\frac{dy}{dt}$$</li>
+                                    <li>Compute the component derivatives: $$\frac{\partial z}{\partial x} = 2xy + 2, \qquad \frac{\partial z}{\partial y} = x^2$$ $$\frac{dx}{dt} = e^t, \qquad \frac{dy}{dt} = \cos t$$ At \(t = 0\), we have: $$x(0) = e^0 = 1, \qquad y(0) = \sin(0) = 0$$ Evaluating the derivatives at \(t = 0\): $$\frac{\partial z}{\partial x}(1, 0) = 2(1)(0) + 2 = 2, \qquad \frac{\partial z}{\partial y}(1, 0) = 1^2 = 1$$ $$\frac{dx}{dt}(0) = e^0 = 1, \qquad \frac{dy}{dt}(0) = \cos(0) = 1$$ Substitute into the Chain Rule: $$\left.\frac{dz}{dt}\right|_{t=0} = (2)(1) + (1)(1) = 2 + 1 = 3$$</li>
+                                </ol>
+                            </li>
+                            <li style="margin-top: 12px;"><strong>Method 1 (Formula):</strong> Define \(F(x, y, z) = x^2 y + z^3 - 3z - 5 = 0\).<br />Compute the required partial derivatives: $$F_x = 2xy, \qquad F_z = 3z^2 - 3$$ Applying \(\dfrac{\partial z}{\partial x} = -\dfrac{F_x}{F_z}\): $$\frac{\partial z}{\partial x} = -\frac{2xy}{3z^2 - 3} \quad \left(\text{or } \frac{2xy}{3 - 3z^2}\right)$$ <br /><strong>Method 2 (Direct Implicit Differentiation):</strong> Differentiating both sides with respect to \(x\) (treating \(y\) as a constant and \(z\) as a function of \(x\)): $$2xy + 3z^2\frac{\partial z}{\partial x} - 3\frac{\partial z}{\partial x} = 0 \implies (3z^2 - 3)\frac{\partial z}{\partial x} = -2xy \implies \frac{\partial z}{\partial x} = -\frac{2xy}{3z^2 - 3}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+</div>
