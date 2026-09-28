@@ -1,0 +1,212 @@
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #2d3748; max-width: 900px; margin: 0 auto; padding: 20px;">
+    <header style="border-bottom: 3px solid #2b6cb0; padding-bottom: 12px; margin-bottom: 24px;">
+        <p style="color: #1a365d; margin: 0 0 6px 0; font-size: 1.85rem;">Math 241: Quizzes &amp; Solutions</p>
+        <p style="margin: 0; color: #4a5568; font-size: 1rem;">Calculus II &bull; Integral Calculus &amp; Applications</p>
+    </header>
+    <nav style="background-color: #ebf8ff; border-radius: 8px; padding: 18px 24px; margin-bottom: 32px; border: 1px solid #bee3f8;" aria-label="Quiz Navigation Index">
+        <h2 style="color: #2b6cb0; font-size: 1.2rem; margin-top: 0; margin-bottom: 10px;">Quiz Archive Index</h2>
+        <ul style="margin: 0; padding-left: 20px; color: #2c5282;">
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#quiz-1">Quiz 1: Riemann Sums &amp; Fundamental Theorem of Calculus (08/25/2026)</a></li>
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#quiz-2">Quiz 2: Distance/Displacement, Substitution Rule, &amp; Area Between Curves (09/01/2026)</a></li>
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#quiz-3">Quiz 3: Volumes by Slicing, Disk Method, &amp; Cylindrical Shells (09/08/2026)</a></li>
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#quiz-4">Quiz 4: Average Value of a Function, MVT for Integrals, &amp; Work (09/15/2026)</a></li>
+        </ul>
+    </nav>
+    <section id="quiz-1" style="margin-bottom: 48px;" aria-labelledby="quiz-1-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h2 id="quiz-1-heading" style="margin: 0; font-size: 1.35rem; color: #ffffff;">Quiz 1: Riemann Sums and Fundamental Theorem of Calculus</h2>
+            <span style="font-size: 0.95rem; background-color: #2c5282; padding: 3px 8px; border-radius: 4px;">Date: 08/25/2026</span>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 1</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[8 points]</span>
+                </div>
+                <p>Let \(f(x) = 6 - 2x\) on the interval \([0, 2]\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Divide \([0, 2]\) into \(n = 2\) equal subintervals. Find \(\Delta x\) and list the grid points \(x_0, x_1, x_2\).</li>
+                    <li>Compute the Right-endpoint approximation \(R_2\) for the area under the curve.</li>
+                    <li>Is \(R_2\) an overestimate or an underestimate? Briefly explain using the monotonicity of \(f(x)\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>\(\Delta x = \dfrac{2 - 0}{2} = 1\). The grid points are \(x_0 = 0, \ x_1 = 1, \ x_2 = 2\).</li>
+                            <li>Sample at the right endpoints \(x_1 = 1\) and \(x_2 = 2\): $$R_2 = \sum_{i=1}^2 f(x_i)\Delta x = [f(1) + f(2)](1) = [(6 - 2) + (6 - 4)](1) = 4 + 2 = 6$$</li>
+                            <li>Since \(f'(x) = -2 \le 0\), \(f(x)\) is decreasing on \([0, 2]\). Thus, the right-endpoint approximation is an <strong>underestimate</strong>.</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 2</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[12 points]</span>
+                </div>
+                <ol style="padding-left: 20px;">
+                    <li>Find the derivative \(\displaystyle\frac{dy}{dx}\) using FTC Part 1: $$y = \int_1^{x^2} \sqrt{t + 3}\,dt$$</li>
+                    <li>Evaluate the definite integral using FTC Part 2: $$\int_0^3 (3x^2 - 4x + 1)\,dx$$</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Applying FTC 1 with the Chain Rule (\(u = x^2, \frac{du}{dx} = 2x\)): $$\frac{dy}{dx} = \sqrt{x^2 + 3} \cdot \frac{d}{dx}(x^2) = 2x\sqrt{x^2 + 3}$$</li>
+                            <li>Find the antiderivative and evaluate from \(0\) to \(3\): $$\begin{aligned} \int_0^3 (3x^2 - 4x + 1)\,dx &amp;= \left[ x^3 - 2x^2 + x \right]_0^3 \\ &amp;= (3^3 - 2(3^2) + 3) - (0^3 - 2(0^2) + 0) \\ &amp;= (27 - 18 + 3) - 0 = 12 \end{aligned}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="quiz-2" style="margin-bottom: 48px;" aria-labelledby="quiz-2-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h2 id="quiz-2-heading" style="margin: 0; font-size: 1.35rem; color: #ffffff;">Quiz 2: Distance/Displacement, Substitution Rule, and Area Between Curves</h2>
+            <span style="font-size: 0.95rem; background-color: #2c5282; padding: 3px 8px; border-radius: 4px;">Date: 09/01/2026</span>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 1</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[8 points]</span>
+                </div>
+                <p>A particle moves along a straight line with velocity function \(v(t) = 6 - 2t\) (in \(\text{m/s}\)) for \(0 \le t \le 4\). Find the total distance traveled by the particle over the time interval \([0, 4]\).</p>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>The displacement is the definite integral of velocity: $$\text{Displacement} = \int_0^4 (6 - 2t)\,dt = \left[ 6t - t^2 \right]_0^4 = (6(4) - 4^2) - 0 = 24 - 16 = 8\text{ meters}$$</li>
+                            <li>Find the turning point by setting \(v(t) = 0\): $$6 - 2t = 0 \implies t = 3$$ On \([0, 3]\), \(v(t) \ge 0\) (forward motion), and on \([3, 4]\), \(v(t) \le 0\) (backward motion). Split the integral at \(t = 3\): $$\begin{aligned} \int_0^3 (6 - 2t)\,dt &amp;= \left[ 6t - t^2 \right]_0^3 = (18 - 9) - 0 = 9, \\ \int_3^4 (6 - 2t)\,dt &amp;= \left[ 6t - t^2 \right]_3^4 = (24 - 16) - (18 - 9) = 8 - 9 = -1 \end{aligned}$$ $$\text{Total Distance} = |9| + |-1| = 9 + 1 = 10\text{ meters}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 2</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[12 points]</span>
+                </div>
+                <ol style="padding-left: 20px;">
+                    <li>Evaluate the definite integral using the Substitution Rule: $$\int_0^1 x(x^2 + 1)^3\,dx$$</li>
+                    <li>Find the area of the region enclosed between the curve \(y = \sqrt{x}\) and the line \(y = x\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Let \(u = x^2 + 1\), so \(du = 2x\,dx \implies x\,dx = \frac{1}{2}\,du\).<br />Transform the limits of integration:
+                                <ul style="padding-left: 20px; margin-top: 4px; margin-bottom: 6px;">
+                                    <li>Lower limit: \(x = 0 \implies u = 0^2 + 1 = 1\)</li>
+                                    <li>Upper limit: \(x = 1 \implies u = 1^2 + 1 = 2\)</li>
+                                </ul>
+                                Evaluating the integral: $$\int_0^1 x(x^2 + 1)^3\,dx = \frac{1}{2}\int_1^2 u^3\,du = \frac{1}{2}\left[ \frac{u^4}{4} \right]_1^2 = \frac{1}{2}\left( \frac{16}{4} - \frac{1}{4} \right) = \frac{1}{2}\left(\frac{15}{4}\right) = \frac{15}{8}$$
+                            </li>
+                            <li><strong>Step 1 (Intersection Points):</strong> Set \(\sqrt{x} = x \implies x = x^2 \implies x(x - 1) = 0 \implies x = 0\) and \(x = 1\).<br /><br /><strong>Step 2 (Top vs. Bottom):</strong> For \(x \in (0, 1)\), testing \(x = \frac{1}{4}\) gives \(\sqrt{1/4} = \frac{1}{2} &gt; \frac{1}{4}\), so \(y_{\text{top}} = \sqrt{x}\) and \(y_{\text{bottom}} = x\).<br /><br /><strong>Step 3 (Integrate):</strong> $$A = \int_0^1 (\sqrt{x} - x)\,dx = \left[ \frac{2}{3}x^{3/2} - \frac{x^2}{2} \right]_0^1 = \left( \frac{2}{3}(1) - \frac{1}{2}(1) \right) - 0 = \frac{2}{3} - \frac{1}{2} = \frac{1}{6}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="quiz-3" style="margin-bottom: 48px;" aria-labelledby="quiz-3-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h2 id="quiz-3-heading" style="margin: 0; font-size: 1.35rem; color: #ffffff;">Quiz 3: Volumes by Cross-Sections, Disk Method, and Cylindrical Shells</h2>
+            <span style="font-size: 0.95rem; background-color: #2c5282; padding: 3px 8px; border-radius: 4px;">Date: 09/08/2026</span>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 1</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[8 points]</span>
+                </div>
+                <p>The base of a solid is the region in the \(xy\)-plane bounded by the line \(y = 3 - x\), the \(x\)-axis, and the \(y\)-axis (for \(0 \le x \le 3\)). Cross-sections perpendicular to the \(x\)-axis are squares with one side lying in the base.</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the side length \(s(x)\) and the cross-sectional area \(A(x)\) of a slice at position \(x\).</li>
+                    <li>Find the volume of the solid.</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>For each \(x \in [0, 3]\), the side of the square cross-section runs vertically from the \(x\)-axis (\(y = 0\)) to the line \(y = 3 - x\): $$s(x) = (3 - x) - 0 = 3 - x$$ The cross-sectional area of the square slice is: $$A(x) = [s(x)]^2 = (3 - x)^2 = 9 - 6x + x^2$$</li>
+                            <li>Integrating \(A(x)\) from \(x = 0\) to \(x = 3\): $$\begin{aligned} V &amp;= \int_0^3 A(x)\,dx = \int_0^3 (3 - x)^2\,dx \\ &amp;= \left[ -\frac{(3 - x)^3}{3} \right]_0^3 \\ &amp;= 0 - \left( -\frac{3^3}{3} \right) = \frac{27}{3} = 9 \end{aligned}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 2</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[12 points]</span>
+                </div>
+                <p>Let \(\mathcal{R}\) be the region enclosed by the curve \(y = 2\sqrt{x}\), the horizontal line \(y = 0\), and the vertical line \(x = 1\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Set up <strong>but do not</strong> evaluate an integral for the volume of the solid obtained by revolving \(\mathcal{R}\) about the \(x\)-axis (Disk Method).</li>
+                    <li>Set up <strong>but do not</strong> evaluate an integral for the volume of the solid obtained by revolving \(\mathcal{R}\) about the \(y\)-axis using the Method of Cylindrical Shells.</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li><strong>Disk Method (Revolved about the \(x\)-axis):</strong><br />Slicing perpendicular to the \(x\)-axis, the radius of each circular disk is \(R(x) = 2\sqrt{x}\).<br />The cross-sectional area is: $$A(x) = \pi [R(x)]^2 = \pi (2\sqrt{x})^2 = 4\pi x$$ Integrating from \(x = 0\) to \(x = 1\): $$V = \int_0^1 4\pi x\,dx = 4\pi \left[ \frac{x^2}{2} \right]_0^1 = 4\pi \left(\frac{1}{2}\right) = 2\pi$$</li>
+                            <li style="margin-top: 12px;"><strong>Shell Method (Revolved about the \(y\)-axis):</strong><br />For a vertical strip at position \(x \in [0, 1]\) rotated around the \(y\)-axis:
+                                <ul style="padding-left: 20px; margin-top: 4px; margin-bottom: 6px;">
+                                    <li>\(\text{Radius} = x\)</li>
+                                    <li>\(\text{Height} = 2\sqrt{x} - 0 = 2x^{1/2}\)</li>
+                                    <li>\(\text{Thickness} = dx\)</li>
+                                </ul>
+                                Setting up the shell integral: $$\begin{aligned} V &amp;= 2\pi \int_0^1 (\text{radius})(\text{height})\,dx = 2\pi \int_0^1 x \left(2x^{1/2}\right) dx \\ &amp;= 4\pi \int_0^1 x^{3/2}\,dx \\ &amp;= 4\pi \left[ \frac{2}{5}x^{5/2} \right]_0^1 = 4\pi \left(\frac{2}{5}\right) = \frac{8\pi}{5} \end{aligned}$$
+                            </li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="quiz-4" style="margin-bottom: 48px;" aria-labelledby="quiz-4-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <h2 id="quiz-4-heading" style="margin: 0; font-size: 1.35rem; color: #ffffff;">Quiz 4: Average Value of a Function, MVT for Integrals, and Work</h2>
+            <span style="font-size: 0.95rem; background-color: #2c5282; padding: 3px 8px; border-radius: 4px;">Date: 09/15/2026</span>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 1</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[8 points]</span>
+                </div>
+                <p>Consider the function \(f(x) = x^2 + 1\) on the interval \([0, 3]\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the average value \(f_{\text{avg}}\) of \(f(x)\) on \([0, 3]\).</li>
+                    <li>Find the number \(c \in [0, 3]\) guaranteed by the Mean Value Theorem for Integrals such that \(f(c) = f_{\text{avg}}\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>By definition, the average value of a continuous function on \([a, b]\) is: $$f_{\text{avg}} = \frac{1}{b - a} \int_a^b f(x)\,dx = \frac{1}{3 - 0} \int_0^3 (x^2 + 1)\,dx$$ Evaluating the definite integral: $$\int_0^3 (x^2 + 1)\,dx = \left[ \frac{x^3}{3} + x \right]_0^3 = \left( \frac{27}{3} + 3 \right) - 0 = 9 + 3 = 12$$ Therefore: $$f_{\text{avg}} = \frac{1}{3}(12) = 4$$</li>
+                            <li>Set \(f(c) = f_{\text{avg}} = 4\): $$c^2 + 1 = 4 \implies c^2 = 3 \implies c = \pm\sqrt{3}$$ Since we require \(c \in [0, 3]\), choose the positive value: $$c = \sqrt{3} \approx 1.732$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <h3 style="color: #2d3748; font-size: 1.15rem; margin: 0;">Problem 2</h3>
+                    <span style="color: #2b6cb0; font-size: 0.95rem;">[12 points]</span>
+                </div>
+                <p>An inverted conical water tank (vertex pointing downward) has a height of \(8\text{ m}\) and a top circular radius of \(2\text{ m}\). The tank is filled with water to a depth of \(5\text{ m}\).</p>
+                <p>Set up <strong>but do not</strong> evaluate a definite integral representing the total work required to pump all of the water out over the top rim of the tank. (Use water density \(\rho = 1000\text{ kg/m}^3\) and \(g = 9.8\text{ m/s}^2\)).</p>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <p><strong>Step 1: Coordinate Setup.</strong><br />Place the origin \(y = 0\) at the bottom vertex of the cone and the top rim at \(y = 8\). The water occupies the interval \(y \in [0, 5]\).</p>
+                        <p><strong>Step 2: Geometry and Weight of a Typical Slice.</strong><br />At height \(y\), let \(r(y)\) be the radius of a circular horizontal slab of thickness \(dy\). By similar triangles: $$\frac{r(y)}{y} = \frac{2}{8} = \frac{1}{4} \implies r(y) = \frac{1}{4}y$$ The volume and weight (force) of the slice are: $$\begin{aligned} dV &amp;= \pi [r(y)]^2\,dy = \pi \left( \frac{y}{4} \right)^2 dy = \frac{\pi}{16}y^2\,dy, \\ dF &amp;= \rho g\,dV = (1000)(9.8)\pi \left( \frac{y}{4} \right)^2 dy = 9800\pi \left( \frac{y}{4} \right)^2 dy\text{ N} \end{aligned}$$</p>
+                        <p><strong>Step 3: Distance and Integral Setup.</strong><br />Each slice at height \(y\) must be lifted to the top rim at \(y = 8\), giving a displacement of \(8 - y\).<br />Integrating over the water depth \(y \in [0, 5]\): $$W = \int_0^5 9800\pi \left( \frac{y}{4} \right)^2 (8 - y)\,dy \quad \left( \text{or } \int_0^5 \frac{1225\pi}{2} y^2 (8 - y)\,dy \right)$$</p>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+</div>
