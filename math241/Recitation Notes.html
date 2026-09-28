@@ -1,0 +1,363 @@
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #2d3748; max-width: 900px; margin: 0 auto; padding: 20px;">
+    <header style="border-bottom: 3px solid #2b6cb0; padding-bottom: 12px; margin-bottom: 24px;">
+        <p style="color: #1a365d; margin: 0 0 6px 0; font-size: 1.85rem;">Course Recitations &amp; Problem Sets</p>
+        <p style="margin: 0; color: #4a5568; font-size: 1rem;">Calculus III</p>
+    </header>
+    <nav style="background-color: #ebf8ff; border-radius: 8px; padding: 18px 24px; margin-bottom: 32px; border: 1px solid #bee3f8;" aria-label="Recitation Index">
+        <h2 style="color: #2b6cb0; font-size: 1.2rem; margin-top: 0; margin-bottom: 10px;">Recitation Index</h2>
+        <ul style="margin: 0; padding-left: 20px; color: #2c5282;">
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#rec-1">Recitation 1: Vectors, Dot &amp; Cross Products, Lines and Planes</a></li>
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#rec-2">Recitation 2: Quadric Surfaces, Vector Functions &amp; Space Curves</a></li>
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#rec-3">Recitation 3: Arc Length, Line Integrals &amp; Motion in Space</a></li>
+            <li style="margin-bottom: 6px;"><a style="color: #2b6cb0; text-decoration: underline;" href="#rec-4">Recitation 4: Multivariable Functions, Partial Derivatives &amp; The Chain Rule</a></li>
+        </ul>
+    </nav>
+    <section id="rec-1" style="margin-bottom: 48px;" aria-labelledby="rec-1-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0;">
+            <h2 id="rec-1-heading" style="margin: 0; font-size: 1.4rem; color: #ffffff;">Recitation 1: Vectors, Dot &amp; Cross Products, Lines and Planes</h2>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 1: Vectors, Unit Vectors, and Velocity</h3>
+                <p>Let \(A = (1, -2, 4)\) and \(B = (3, 2, 0)\) be two points in \(\mathbb{R}^3\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the component form and the magnitude of the displacement vector \(\overrightarrow{AB}\).</li>
+                    <li>Find a vector \(\vec{w}\) of length \(6\) pointing in the direction opposite to \(\overrightarrow{AB}\).</li>
+                    <li>If a particle travels from \(A\) to \(B\) along a straight path at a constant speed in \(4\) seconds, find its velocity vector \(\vec{v}\) and its speed.</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>The displacement vector is: $$\overrightarrow{AB} = \langle 3 - 1,\; 2 - (-2),\; 0 - 4 \rangle = \langle 2, 4, -4 \rangle$$ Its magnitude is: $$\|\overrightarrow{AB}\| = \sqrt{2^2 + 4^2 + (-4)^2} = \sqrt{4 + 16 + 16} = \sqrt{36} = 6$$</li>
+                            <li>The unit vector in the direction of \(\overrightarrow{AB}\) is: $$\hat{u} = \frac{\overrightarrow{AB}}{\|\overrightarrow{AB}\|} = \frac{1}{6}\langle 2, 4, -4 \rangle = \left\langle \frac{1}{3}, \frac{2}{3}, -\frac{2}{3} \right\rangle$$ A vector of magnitude \(6\) pointing in the opposite direction is: $$\vec{w} = -6\hat{u} = -6\left\langle \frac{1}{3}, \frac{2}{3}, -\frac{2}{3} \right\rangle = \langle -2, -4, 4 \rangle$$</li>
+                            <li>The velocity vector is displacement divided by elapsed time: $$\vec{v} = \frac{\overrightarrow{AB}}{\Delta t} = \frac{\langle 2, 4, -4 \rangle}{4} = \left\langle \frac{1}{2}, 1, -1 \right\rangle$$ The speed is the magnitude of velocity: $$\|\vec{v}\| = \sqrt{\left(\frac{1}{2}\right)^2 + 1^2 + (-1)^2} = \sqrt{\frac{1}{4} + 1 + 1} = \sqrt{\frac{9}{4}} = \frac{3}{2}\text{ units/s}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 2: Dot Product, Projections, and Work</h3>
+                <p>Let \(\mathbf{u} = \langle 2, -1, 2 \rangle\) and \(\mathbf{v} = \langle 1, 2, -2 \rangle\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Compute the dot product \(\mathbf{u} \cdot \mathbf{v}\) and determine the angle \(\theta\) between the two vectors.</li>
+                    <li>Find the scalar projection \(\operatorname{comp}_{\mathbf{v}}\mathbf{u}\) and the vector projection \(\operatorname{proj}_{\mathbf{v}}\mathbf{u}\).</li>
+                    <li>Find the work \(W\) done by the constant force \(\mathbf{F} = \mathbf{u}\) in moving an object along the displacement vector \(\mathbf{d} = \langle 3, 0, 4 \rangle\) meters (assuming force is in newtons).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Compute the dot product and individual magnitudes: $$\mathbf{u} \cdot \mathbf{v} = (2)(1) + (-1)(2) + (2)(-2) = 2 - 2 - 4 = -4$$ $$\|\mathbf{u}\| = \sqrt{2^2 + (-1)^2 + 2^2} = 3, \quad \|\mathbf{v}\| = \sqrt{1^2 + 2^2 + (-2)^2} = 3$$ The angle \(\theta\) satisfies: $$\cos\theta = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\|\|\mathbf{v}\|} = \frac{-4}{(3)(3)} = -\frac{4}{9} \implies \theta = \cos^{-1}\left(-\frac{4}{9}\right) \approx 116.4^\circ$$</li>
+                            <li>The scalar projection is: $$\operatorname{comp}_{\mathbf{v}}\mathbf{u} = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{v}\|} = \frac{-4}{3}$$ The vector projection is: $$\operatorname{proj}_{\mathbf{v}}\mathbf{u} = \left(\frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{v}\|^2}\right)\mathbf{v} = \frac{-4}{9}\langle 1, 2, -2 \rangle = \left\langle -\frac{4}{9}, -\frac{8}{9}, \frac{8}{9} \right\rangle$$</li>
+                            <li>The work done is: $$W = \mathbf{F} \cdot \mathbf{d} = \langle 2, -1, 2 \rangle \cdot \langle 3, 0, 4 \rangle = (2)(3) + (-1)(0) + (2)(4) = 6 + 0 + 8 = 14\text{ J}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 3: Cross Product, Area, and Torque</h3>
+                <p>Consider the three points \(P(1, 0, 1)\), \(Q(2, 3, 0)\), and \(R(0, 2, 4)\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the cross product \(\overrightarrow{PQ} \times \overrightarrow{PR}\).</li>
+                    <li>Compute the area of the triangle \(\triangle PQR\).</li>
+                    <li>A force \(\mathbf{F} = \langle 2, -1, 5 \rangle\text{ N}\) is applied at point \(Q\) relative to a pivot located at \(P\). Find the torque vector \(\boldsymbol{\tau}\) acting about \(P\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Determine displacement vectors: $$\overrightarrow{PQ} = \langle 2 - 1, 3 - 0, 0 - 1 \rangle = \langle 1, 3, -1 \rangle, \quad \overrightarrow{PR} = \langle 0 - 1, 2 - 0, 4 - 1 \rangle = \langle -1, 2, 3 \rangle$$ Computing the determinant: $$\begin{aligned} \overrightarrow{PQ} \times \overrightarrow{PR} &amp;= \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 1 &amp; 3 &amp; -1 \\ -1 &amp; 2 &amp; 3 \end{vmatrix} \\ &amp;= \mathbf{i}(9 - (-2)) - \mathbf{j}(3 - 1) + \mathbf{k}(2 - (-3)) = \langle 11, -2, 5 \rangle \end{aligned}$$</li>
+                            <li>The area of \(\triangle PQR\) is half the cross product magnitude: $$\|\overrightarrow{PQ} \times \overrightarrow{PR}\| = \sqrt{11^2 + (-2)^2 + 5^2} = \sqrt{150} = 5\sqrt{6}$$ $$\text{Area}(\triangle PQR) = \frac{1}{2}(5\sqrt{6}) = \frac{5\sqrt{6}}{2}$$</li>
+                            <li>With position vector \(\mathbf{r} = \overrightarrow{PQ} = \langle 1, 3, -1 \rangle\): $$\begin{aligned} \boldsymbol{\tau} &amp;= \mathbf{r} \times \mathbf{F} = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 1 &amp; 3 &amp; -1 \\ 2 &amp; -1 &amp; 5 \end{vmatrix} \\ &amp;= \mathbf{i}(15 - 1) - \mathbf{j}(5 - (-2)) + \mathbf{k}(-1 - 6) = \langle 14, -7, -7 \rangle\text{ N}\cdot\text{m} \end{aligned}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 4: Equations of Lines &amp; Planes in \(\mathbb{R}^3\)</h3>
+                <ol style="padding-left: 20px;">
+                    <li>Find the scalar equation of the plane \(\mathcal{P}\) passing through the points \(P(1, 0, 1)\), \(Q(2, 3, 0)\), and \(R(0, 2, 4)\).</li>
+                    <li>Find the parametric equations of the line \(L\) passing through \(S(12, -2, 6)\) that is perpendicular to the plane \(\mathcal{P}\).</li>
+                    <li>Find the point where the line \(L\) intersects the plane \(\mathcal{P}\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Using normal \(\vec{n} = \langle 11, -2, 5 \rangle\) from Problem 3 and point \(P(1, 0, 1)\): $$11(x - 1) - 2(y - 0) + 5(z - 1) = 0 \implies 11x - 2y + 5z = 16$$</li>
+                            <li>Since \(L\) is perpendicular to \(\mathcal{P}\), its direction vector is \(\vec{n} = \langle 11, -2, 5 \rangle\). Passing through \(S(12, -2, 6)\): $$x(t) = 12 + 11t, \quad y(t) = -2 - 2t, \quad z(t) = 6 + 5t, \quad t \in \mathbb{R}$$</li>
+                            <li>Substitute the parametric equations into the plane's scalar equation: $$11(12 + 11t) - 2(-2 - 2t) + 5(6 + 5t) = 16$$ $$(132 + 121t) + (4 + 4t) + (30 + 25t) = 16 \implies 150t + 166 = 16 \implies t = -1$$ Evaluating at \(t = -1\): $$x = 12 + 11(-1) = 1, \quad y = -2 - 2(-1) = 0, \quad z = 6 + 5(-1) = 1$$ The line intersects the plane at \((1, 0, 1)\) (point \(P\)).</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="rec-2" style="margin-bottom: 48px;" aria-labelledby="rec-2-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0;">
+            <h2 id="rec-2-heading" style="margin: 0; font-size: 1.4rem; color: #ffffff;">Recitation 2: Quadric Surfaces, Vector Functions &amp; Space Curves</h2>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 1: Quadric Surface Analysis &amp; Traces</h3>
+                <p>Study the quadric surface given by the equation: $$4x^2 - y^2 + z^2 = 4$$</p>
+                <ol style="padding-left: 20px;">
+                    <li>Write the equation in standard form and identify the type of quadric surface.</li>
+                    <li>Find all coordinate intercepts (if any).</li>
+                    <li>Find equations for the traces in the three coordinate planes (\(xy\), \(xz\), and \(yz\)) and identify each curve.</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Dividing both sides by \(4\): $$x^2 - \frac{y^2}{4} + \frac{z^2}{4} = 1$$ This is a <strong>hyperboloid of one sheet</strong> opening along the \(y\)-axis (due to the negative sign on \(y^2\)).</li>
+                            <li><strong>Coordinate Intercepts:</strong>
+                                <ul>
+                                    <li>\(x\)-intercepts (\(y = z = 0\)): \(x^2 = 1 \implies x = \pm 1 \implies (\pm 1, 0, 0)\)</li>
+                                    <li>\(y\)-intercepts (\(x = z = 0\)): \(-\frac{y^2}{4} = 1\) (no real solutions, so no \(y\)-intercepts)</li>
+                                    <li>\(z\)-intercepts (\(x = y = 0\)): \(\frac{z^2}{4} = 1 \implies z = \pm 2 \implies (0, 0, \pm 2)\)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Coordinate Traces:</strong>
+                                <ul>
+                                    <li><strong>\(xy\)-trace (\(z=0\)):</strong> \(x^2 - \frac{y^2}{4} = 1\) (a hyperbola opening along the \(x\)-axis)</li>
+                                    <li><strong>\(yz\)-trace (\(x=0\)):</strong> \(\frac{z^2}{4} - \frac{y^2}{4} = 1\) (a hyperbola opening along the \(z\)-axis)</li>
+                                    <li><strong>\(xz\)-trace (\(y=0\)):</strong> \(x^2 + \frac{z^2}{4} = 1\) (an ellipse centered at the origin)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 2: Domain of a Vector-Valued Function</h3>
+                <p>Find the domain of the vector-valued function: $$\mathbf{r}(t) = \left\langle \sqrt{9-t^2}, \; \frac{\sin(2t)}{t}, \; \ln(t+1) \right\rangle$$ Express your answer in interval notation.</p>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <p>The domain of \(\mathbf{r}(t)\) is the intersection of the domains of its component functions:</p>
+                        <ul style="padding-left: 20px;">
+                            <li>\(\sqrt{9-t^2} \implies 9 - t^2 \ge 0 \implies t \in [-3, 3]\)</li>
+                            <li>\(\dfrac{\sin(2t)}{t} \implies t \neq 0 \implies t \in (-\infty, 0) \cup (0, \infty)\)</li>
+                            <li>\(\ln(t+1) \implies t + 1 &gt; 0 \implies t \in (-1, \infty)\)</li>
+                        </ul>
+                        <p>Intersecting these intervals yields: $$\text{Domain} = [-3, 3] \cap \big((-\infty, 0) \cup (0, \infty)\big) \cap (-1, \infty) = \mathbf{(-1, 0) \cup (0, 3]}$$</p>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 3: Intersection Curve of Surfaces</h3>
+                <p>Find a vector-valued function \(\mathbf{r}(t)\) that parametrizes the curve of intersection between the circular cylinder \(x^2 + y^2 = 16\) and the plane \(2x - y + z = 4\). Include the domain for parameter \(t\).</p>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <p>The cylinder projects onto a circle of radius \(4\) in the \(xy\)-plane. Parametrize \(x\) and \(y\) using polar form: $$x(t) = 4\cos t, \quad y(t) = 4\sin t, \qquad t \in [0, 2\pi)$$</p>
+                        <p>Substitute these expressions into the plane equation solving for \(z\): $$z(t) = 4 - 2x + y = 4 - 2(4\cos t) + 4\sin t = 4 - 8\cos t + 4\sin t$$</p>
+                        <p>Thus, the parametrization is: $$\mathbf{r}(t) = \mathbf{\langle 4\cos t, \; 4\sin t, \; 4 - 8\cos t + 4\sin t \rangle}, \qquad t \in [0, 2\pi)$$</p>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 4: Velocity, Unit Tangent Vector, &amp; Tangent Lines</h3>
+                <p>Consider the space curve given by \(\mathbf{r}(t) = \langle t^2, \; 2t, \; \ln t \rangle\) for \(t &gt; 0\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the velocity vector \(\mathbf{r}'(t)\) and evaluate the speed \(\|\mathbf{r}'(t)\|\) at \(t = 1\).</li>
+                    <li>Find the unit tangent vector \(\mathbf{T}(t)\) at \(t = 1\).</li>
+                    <li>Find parametric equations for the tangent line to the curve at \(t = 1\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Differentiate component-wise: $$\mathbf{r}'(t) = \left\langle 2t, \; 2, \; \frac{1}{t} \right\rangle \implies \mathbf{r}'(1) = \langle 2, 2, 1 \rangle$$ The speed is: $$\|\mathbf{r}'(1)\| = \sqrt{2^2 + 2^2 + 1^2} = \sqrt{9} = \mathbf{3}$$</li>
+                            <li>The unit tangent vector is: $$\mathbf{T}(1) = \frac{\mathbf{r}'(1)}{\|\mathbf{r}'(1)\|} = \frac{\langle 2, 2, 1 \rangle}{3} = \mathbf{\left\langle \frac{2}{3}, \; \frac{2}{3}, \; \frac{1}{3} \right\rangle}$$</li>
+                            <li>The point on the curve at \(t = 1\) is \(\mathbf{r}(1) = \langle 1^2, 2(1), \ln 1 \rangle = (1, 2, 0)\). Using direction vector \(\mathbf{v} = \langle 2, 2, 1 \rangle\) and parametter \(s \in \mathbb{R}\): $$x(s) = 1 + 2s, \quad y(s) = 2 + 2s, \quad z(s) = s$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 5: Initial Value Kinematics</h3>
+                <p>A particle moves with acceleration \(\mathbf{a}(t) = \langle -\cos t, \; -\sin t, \; 6t \rangle\) for \(t \ge 0\). Its initial velocity is \(\mathbf{v}(0) = \langle 0, 2, 1 \rangle\) and initial position is \(\mathbf{r}(0) = \langle 1, 0, 0 \rangle\). Find the velocity vector \(\mathbf{v}(t)\) and position vector \(\mathbf{r}(t)\) for all \(t \ge 0\).</p>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol start="1" type="1">
+                            <li><strong>Velocity:</strong> Integrating acceleration gives: $$\mathbf{v}(t) = \int \mathbf{a}(t)\,dt = \langle -\sin t, \; \cos t, \; 3t^2 \rangle + \mathbf{C}_1$$ Using \(\mathbf{v}(0) = \langle 0, 1, 0 \rangle + \mathbf{C}_1 = \langle 0, 2, 1 \rangle \implies \mathbf{C}_1 = \langle 0, 1, 1 \rangle\): $$\mathbf{v}(t) = \mathbf{\langle -\sin t, \; 1 + \cos t, \; 3t^2 + 1 \rangle}$$</li>
+                            <li><strong>Position:</strong> Integrating velocity gives: $$\mathbf{r}(t) = \int \mathbf{v}(t)\,dt = \langle \cos t, \; t + \sin t, \; t^3 + t \rangle + \mathbf{C}_2$$ Using \(\mathbf{r}(0) = \langle 1, 0, 0 \rangle + \mathbf{C}_2 = \langle 1, 0, 0 \rangle \implies \mathbf{C}_2 = \langle 0, 0, 0 \rangle\): $$\mathbf{r}(t) = \mathbf{\langle \cos t, \; t + \sin t, \; t^3 + t \rangle}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="rec-3" style="margin-bottom: 48px;" aria-labelledby="rec-3-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0;">
+            <h2 id="rec-3-heading" style="margin: 0; font-size: 1.4rem; color: #ffffff;">Recitation 3: Arc Length, Line Integrals &amp; Motion in Space</h2>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 1: Arc Length of a Space Curve</h3>
+                <p>Consider the space curve parameterized by $$\mathbf{r}(t) = \left\langle 3t, \; 3t^2, \; 2t^3 \right\rangle, \qquad 0 \le t \le 2$$</p>
+                <ol style="padding-left: 20px;">
+                    <li>Compute the velocity vector \(\mathbf{r}'(t)\) and show that the speed simplifies to \(\|\mathbf{r}'(t)\| = 3(1 + 2t^2)\).</li>
+                    <li>Calculate the total arc length \(L\) of the curve over the intervral \([0, 2]\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Differentiating each component with respect to \(t\): $$\mathbf{r}'(t) = \frac{d}{dt}\left\langle 3t, \; 3t^2, \; 2t^3 \right\rangle = \langle 3, \; 6t, \; 6t^2 \rangle$$ The speed is the magnitude of the velocity vector: $$\begin{aligned} \|\mathbf{r}'(t)\| &amp;= \sqrt{3^2 + (6t)^2 + (6t^2)^2} = \sqrt{9 + 36t^2 + 36t^4} \\ &amp;= \sqrt{9\left(1 + 4t^2 + 4t^4\right)} = 3\sqrt{\left(1 + 2t^2\right)^2} = \mathbf{3\left(1 + 2t^2\right) = 3 + 6t^2} \end{aligned}$$</li>
+                            <li>Using the arc length formula: $$\begin{aligned} L &amp;= \int_0^2 \|\mathbf{r}'(t)\|\,dt = \int_0^2 \left(3 + 6t^2\right)\,dt \\ &amp;= \left[ 3t + 2t^3 \right]_0^2 = \left(3(2) + 2(2)^3\right) - 0 = 6 + 16 = \mathbf{22} \end{aligned}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 2: Scalar Line Integral &amp; Total Mass of a Wire</h3>
+                <p>A thin metallic wire is coiled along the circular helix $$\mathbf{r}(t) = \langle 4\cos t, \; 4\sin t, \; 3t \rangle, \qquad 0 \le t \le \pi$$</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the differential arc length element \(ds = \|\mathbf{r}'(t)\|\,dt\).</li>
+                    <li>If the linear mass density of the wire at any point is \(\rho(x, y, z) = x + y + z\), evaluate the scalar line integral \(M = \int_C \rho(x, y, z)\,ds\) to find the total mass of the wire.</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Compute the velocity vector: $$\mathbf{r}'(t) = \langle -4\sin t, \; 4\cos t, \; 3 \rangle$$ The speed along the helix is: $$\|\mathbf{r}'(t)\| = \sqrt{(-4\sin t)^2 + (4\cos t)^2 + 3^2} = \sqrt{16(\sin^2 t + \cos^2 t) + 9} = \sqrt{16 + 9} = 5$$ Thus, the differential arc length element is: $$ds = \|\mathbf{r}'(t)\|\,dt = \mathbf{5\,dt}$$</li>
+                            <li>Evaluate the density function along the parameterized path: $$\rho(\mathbf{r}(t)) = x(t) + y(t) + z(t) = 4\cos t + 4\sin t + 3t$$ Substitute into the scalar line integral formula: $$\begin{aligned} M &amp;= \int_0^\pi \rho(\mathbf{r}(t))\,\|\mathbf{r}'(t)\|\,dt = \int_0^\pi (4\cos t + 4\sin t + 3t)(5)\,dt \\ &amp;= 5 \left[ 4\sin t - 4\cos t + \frac{3}{2}t^2 \right]_0^\pi \\ &amp;= 5 \left[ \left(4\sin\pi - 4\cos\pi + \frac{3\pi^2}{2}\right) - \left(4\sin 0 - 4\cos 0 + 0\right) \right] \\ &amp;= 5 \left[ \left(0 - 4(-1) + \frac{3\pi^2}{2}\right) - (0 - 4(1)) \right] \\ &amp;= 5 \left( 4 + \frac{3\pi^2}{2} + 4 \right) = 5\left(8 + \frac{3\pi^2}{2}\right) = \mathbf{40 + \frac{15\pi^2}{2}} \end{aligned}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 3: Frenet&ndash;Serret Frame (T, N, B)</h3>
+                <p>Consider the circular helix \(\mathbf{r}(t) = \langle 3\cos t, \; 3\sin t, \; 4t \rangle\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the unit tangent vector \(\mathbf{T}(t)\) for any parameter value \(t\).</li>
+                    <li>Compute the principal unit normal vector \(\mathbf{N}(t) = \dfrac{\mathbf{T}'(t)}{\|\mathbf{T}'(t)\|}\).</li>
+                    <li>At \(t = 0\), evaluate \(\mathbf{T}(0)\) and \(\mathbf{N}(0)\), and compute the binormal vector \(\mathbf{B}(0) = \mathbf{T}(0) \times \mathbf{N}(0)\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>First compute the velocity vector and speed: $$\mathbf{r}'(t) = \langle -3\sin t, \; 3\cos t, \; 4 \rangle$$ $$\|\mathbf{r}'(t)\| = \sqrt{(-3\sin t)^2 + (3\cos t)^2 + 4^2} = \sqrt{9(\sin^2 t + \cos^2 t) + 16} = \sqrt{25} = 5$$ The unit tangent vector is: $$\mathbf{T}(t) = \frac{\mathbf{r}'(t)}{\|\mathbf{r}'(t)\|} = \mathbf{\left\langle -\frac{3}{5}\sin t, \; \frac{3}{5}\cos t, \; \frac{4}{5} \right\rangle}$$</li>
+                            <li>Differrentiating \(\mathbf{T}(t)\) with respect to \(t\): $$\mathbf{T}'(t) = \left\langle -\frac{3}{5}\cos t, \; -\frac{3}{5}\sin t, \; 0 \right\rangle$$ Its magnitude is: $$\|\mathbf{T}'(t)\| = \sqrt{\left(-\frac{3}{5}\cos t\right)^2 + \left(-\frac{3}{5}\sin t\right)^2 + 0^2} = \sqrt{\frac{9}{25}(\cos^2 t + \sin^2 t)} = \frac{3}{5}$$ Therefore, the principal unit normal vector is: $$\mathbf{N}(t) = \frac{\mathbf{T}'(t)}{\|\mathbf{T}'(t)\|} = \frac{\left\langle -\frac{3}{5}\cos t, \; -\frac{3}{5}\sin t, \; 0 \right\rangle}{\frac{3}{5}} = \mathbf{\langle -\cos t, \; -\sin t, \; 0 \rangle}$$ <em>(Note: \(\mathbf{N}(t)\) points horizontally directly inward toward the central axis of the helix.)</em></li>
+                            <li>Evaluating at \(t = 0\): $$\mathbf{T}(0) = \left\langle 0, \; \frac{3}{5}, \; \frac{4}{5} \right\rangle, \qquad \mathbf{N}(0) = \langle -1, \; 0, \; 0 \rangle$$ The binormal vector at \(t = 0\) is: $$\begin{aligned} \mathbf{B}(0) &amp;= \mathbf{T}(0) \times \mathbf{N}(0) = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 0 &amp; \frac{3}{5} &amp; \frac{4}{5} \\ -1 &amp; 0 &amp; 0 \end{vmatrix} \\ &amp;= \mathbf{i}\left[\left(\frac{3}{5}\right)(0) - \left(\frac{4}{5}\right)(0)\right] - \mathbf{j}\left[(0)(0) - \left(\frac{4}{5}\right)(-1)\right] + \mathbf{k}\left[(0)(0) - \left(\frac{3}{5}\right)(-1)\right] \\ &amp;= \mathbf{\left\langle 0, \; -\frac{4}{5}, \; \frac{3}{5} \right\rangle} \end{aligned}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 4: 3D Projectile Motion &amp; Impact Analysis</h3>
+                <p>An engineering projectile is launched from the origin \((0, 0, 0)\) with an initial velocity of $$\mathbf{v}(0) = \langle 30, \; 40, \; 50 \rangle \quad \text{(in m/s)}$$ Assuming downward gravitational acceleration \(\mathbf{a}(t) = \langle 0, 0, -10 \rangle\text{ m/s}^2\) and neglecting air resistance:</p>
+                <ol style="padding-left: 20px;">
+                    <li>Find the velocity vector \(\mathbf{v}(t)\) and position vector \(\mathbf{r}(t)\) for all \(t \ge 0\).</li>
+                    <li>Find the time \(T\) when the projectile impacts the ground (\(z = 0\)) and determine the maximum height \(H\) reached during flight.</li>
+                    <li>Determine the projectile's landing location, its horizontal range from the origin, and its speed at impact.</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Integrating acceleration \(\mathbf{a}(t) = \langle 0, 0, -10 \rangle\): $$\mathbf{v}(t) = \int \mathbf{a}(t)\,dt = \langle 0, 0, -10t \rangle + \mathbf{C}_1$$ Using initial velocity \(\mathbf{v}(0) = \langle 30, 40, 50 \rangle\), we get \(\mathbf{C}_1 = \langle 30, 40, 50 \rangle\): $$\mathbf{v}(t) = \mathbf{\langle 30, \; 40, \; 50 - 10t \rangle}$$ Integrating velocity with initial position \(\mathbf{r}(0) = \langle 0, 0, 0 \rangle\): $$\mathbf{r}(t) = \int \mathbf{v}(t)\,dt = \mathbf{\left\langle 30t, \; 40t, \; 50t - 5t^2 \right\rangle}$$</li>
+                            <li>Setting the vertical component to zero to find the flight time \(T\): $$z(T) = 50T - 5T^2 = 0 \implies 5T(10 - T) = 0 \implies \mathbf{T = 10\text{ s}}$$ Maximum height occurs when vertical velocity is zero: $$v_z(t) = 50 - 10t = 0 \implies t = 5\text{ s}$$ Evaluating vertical position at \(t = 5\): $$H = z(5) = 50(5) - 5(5)^2 = 250 - 125 = \mathbf{125\text{ m}}$$</li>
+                            <li>Substituting \(T = 10\text{ s}\) into \(\mathbf{r}(t)\) gives the landing coordinates: $$\mathbf{r}(10) = \langle 30(10), \; 40(10), \; 0 \rangle = \mathbf{(300, \; 400, \; 0)}$$ The horizontal range from the launch point is: $$R = \sqrt{x(10)^2 + y(10)^2} = \sqrt{300^2 + 400^2} = \sqrt{90{,}000 + 160{,}000} = \mathbf{500\text{ m}}$$ The velocity at impact is \(\mathbf{v}(10) = \langle 30, \; 40, \; 50 - 10(10) \rangle = \langle 30, \; 40, \; -50 \rangle\text{ m/s}\), giving an impact speed of: $$\|\mathbf{v}(10)\| = \sqrt{30^2 + 40^2 + (-50)^2} = \sqrt{5000} = \mathbf{50\sqrt{2} \approx 70.71\text{ m/s}}$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="rec-4" style="margin-bottom: 48px;" aria-labelledby="rec-4-heading">
+        <div style="background-color: #2b6cb0; color: #ffffff; padding: 12px 18px; border-radius: 6px 6px 0 0;">
+            <h2 id="rec-4-heading" style="margin: 0; font-size: 1.4rem; color: #ffffff;">Recitation 4: Multivariable Functions, Partial Derivatives &amp; The Chain Rule</h2>
+        </div>
+        <div style="border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor #cbd5e0 #cbd5e0; border-radius: 0px 0px 6px 6px; padding: 20px; background-color: #ffffff;">
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 1: Domain, Range, and Level Curves</h3>
+                <p>Consider the multivariable function:</p>
+                $$f(x, y) = \sqrt{16 - 4x^2 - y^2}$$
+                <ol style="padding-left: 20px;">
+                    <li>Find the domain and range of \(f(x,y)\), and describe the geometric shape of the domain in the \(xy\)-plane.</li>
+                    <li>Find the equations of the level curves \(f(x, y) = c\) for \(c = 0\), \(c = 2\sqrt{3}\), and \(c = 4\). Identify each resulting curve.</li>
+                    <li>Identify the surface given by the graph \(z = f(x, y)\) in \(\mathbb{R}^3\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>The expression under the radical must be nonnegative: $$16 - 4x^2 - y^2 \ge 0 \implies 4x^2 + y^2 \le 16 \implies \frac{x^2}{4} + \frac{y^2}{16} \le 1.$$ The domain is the <strong>closed elliptical disk</strong> centered at \((0,0)\) with semi-minor axis \(2\) and semi-major axis \(4\). Since \(0 \le 16 - 4x^2 - y^2 \le 16\), the range is \([0, 4]\).</li>
+                            <li>Setting \(f(x, y) = c\) gives \(4x^2 + y^2 = 16 - c^2\):
+                                <ul style="padding-left: 20px; margin-top: 8px; margin-bottom: 8px;">
+                                    <li>For \(c = 0\): \(\dfrac{x^2}{4} + \dfrac{y^2}{16} = 1\) (<strong>ellipse</strong> with semi-axes \(2\) and \(4\)).</li>
+                                    <li>For \(c = 2\sqrt{3}\): \(4x^2 + y^2 = 16 - 12 = 4 \implies x^2 + \dfrac{y^2}{4} = 1\) (<strong>ellipse</strong> with semi-axes \(1\) and \(2\)).</li>
+                                    <li>For \(c = 4\): \(4x^2 + y^2 = 0 \implies (x, y) = (0, 0)\) (<strong>single point</strong> at the origin).</li>
+                                </ul>
+                            </li>
+                            <li>Setting \(z = \sqrt{16 - 4x^2 - y^2}\) with \(z \ge 0\) gives: $$\frac{x^2}{4} + \frac{y^2}{16} + \frac{z^2}{16} = 1 \quad (z \ge 0),$$ which is the <strong>upper hemisphere of an ellipsoid</strong> centered at the origin.</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 2: Partial Derivatives &amp; Clairaut's Theorem</h3>
+                <p>Consider the function \(f(x, y) = x^3 \ln y + y\,e^{2x}\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>State the natural domain of \(f(x, y)\).</li>
+                    <li>Compute the first-order partial derivatives \(f_x(x, y)\) and \(f_y(x, y)\).</li>
+                    <li>Compute all second-order partial derivatives \(f_{xx}\), \(f_{yy}\), \(f_{xy}\), and \(f_{yx}\), and verify that Clairaut's Theorem holds.</li>
+                    <li>Evaluate \(f_{xy}(1, 1)\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>The logarithm requires \(y &gt; 0\), so the domain is: $$D = \{(x,y)\in\mathbb{R}^2 \mid y &gt; 0\} = \mathbb{R} \times (0, \infty).$$</li>
+                            <li>Differentiating holding the opposite variable constant: $$f_x(x, y) = 3x^2 \ln y + 2y e^{2x}, \qquad f_y(x, y) = \frac{x^3}{y} + e^{2x}.$$</li>
+                            <li>Differentiating the first partials: $$\begin{aligned} f_{xx}(x, y) &amp;= 6x \ln y + 4y e^{2x}, \qquad f_{yy}(x, y) = -\frac{x^3}{y^2}, \\ f_{xy}(x, y) &amp;= \frac{\partial}{\partial y}(f_x) = \frac{3x^2}{y} + 2e^{2x}, \qquad f_{yx}(x, y) = \frac{\partial}{\partial x}(f_y) = \frac{3x^2}{y} + 2e^{2x}. \end{aligned}$$ Since both mixed partials are continuous and equal on the entire domain, \(f_{xy} = f_{yx}\) (<strong>Clairaut's Theorem verified</strong>).</li>
+                            <li>At \((1, 1)\): $$f_{xy}(1, 1) = \frac{3(1)^2}{1} + 2e^{2(1)} = 3 + 2e^2.$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 28px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 3: Multivariable Chain Rule</h3>
+                <p>Let \(z = x^2 y - 3xy^2\), where \(x(u, v) = u^2 - v^2\) and \(y(u, v) = 2uv\).</p>
+                <ol style="padding-left: 20px;">
+                    <li>State the Chain Rule expressions for \(\dfrac{\partial z}{\partial u}\) and \(\dfrac{\partial z}{\partial v}\).</li>
+                    <li>Find the values of \(x\) and \(y\) when \((u, v) = (1, 1)\).</li>
+                    <li>Evaluate \(\dfrac{\partial z}{\partial u}\) at the point \((u, v) = (1, 1)\).</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>By the multivariable Chain Rule: $$\frac{\partial z}{\partial u} = \frac{\partial z}{\partial x}\frac{\partial x}{\partial u} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial u}, \qquad \frac{\partial z}{\partial v} = \frac{\partial z}{\partial x}\frac{\partial x}{\partial v} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial v}.$$</li>
+                            <li>At \((u, v) = (1, 1)\): $$x(1, 1) = 1^2 - 1^2 = 0, \qquad y(1, 1) = 2(1)(1) = 2.$$</li>
+                            <li>Evaluating the partials at \((x, y) = (0, 2)\) and \((u, v) = (1, 1)\): $$\begin{aligned} \frac{\partial z}{\partial x} &amp;= 2xy - 3y^2 \implies \frac{\partial z}{\partial x}(0, 2) = 0 - 3(2^2) = -12, \\ \frac{\partial z}{\partial y} &amp;= x^2 - 6xy \implies \frac{\partial z}{\partial y}(0, 2) = 0 - 0 = 0, \\ \frac{\partial x}{\partial u} &amp;= 2u \implies \frac{\partial x}{\partial u}(1, 1) = 2, \qquad \frac{\partial y}{\partial u} = 2v \implies \frac{\partial y}{\partial u}(1, 1) = 2. \end{aligned}$$ Substituting into the Chain Rule: $$\left.\frac{\partial z}{\partial u}\right|_{(1,1)} = (-12)(2) + (0)(2) = -24.$$</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+            <article style="margin-bottom: 8px;">
+                <h3 style="color: #2d3748; font-size: 1.15rem; margin-top: 0;">Problem 4: Implicit Differentiation &amp; Rates of Change</h3>
+                <ol style="padding-left: 20px;">
+                    <li>The relation \(x^2 y + y z^3 - 2xz = 0\) defines \(z\) implicitly as a function of \(x\) and \(y\). Use the total differential to derive formulas for \(\dfrac{\partial z}{\partial x}\) and \(\dfrac{\partial z}{\partial y}\).</li>
+                    <li>The electrical power across a resistor is \(P = I^2 R\). At a given instant, \(I = 5\text{ A}\) and increases at \(\dfrac{dI}{dt} = 0.2\text{ A/s}\), while \(R = 40\ \Omega\) and increases at \(\dfrac{dR}{dt} = 0.5\ \Omega/\text{s}\). Compute \(\dfrac{dP}{dt}\) and identify which parameter contributes more to the power surge.</li>
+                </ol>
+                <details style="background-color: #f7fafc; border-radius: 6px; padding: 12px 16px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                    <summary style="color: #2b6cb0; cursor: pointer;">View Solution</summary>
+                    <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e0;">
+                        <ol style="padding-left: 20px;">
+                            <li>Let \(F(x, y, z) = x^2 y + y z^3 - 2xz = 0\). The partial derivatives are: $$F_x = 2xy - 2z, \qquad F_y = x^2 + z^3, \qquad F_z = 3yz^2 - 2x.$$ Using the implicit differentiation identities: $$\begin{aligned} \frac{\partial z}{\partial x} &amp;= -\frac{F_x}{F_z} = -\frac{2xy - 2z}{3yz^2 - 2x} = \frac{2z - 2xy}{3yz^2 - 2x}, \\ \frac{\partial z}{\partial y} &amp;= -\frac{F_y}{F_z} = -\frac{x^2 + z^3}{3yz^2 - 2x}. \end{aligned}$$</li>
+                            <li>Applying the Chain Rule to \(P(I, R)\): $$\frac{dP}{dt} = \frac{\partial P}{\partial I}\frac{dI}{dt} + \frac{\partial P}{\partial R}\frac{dR}{dt} = (2IR)\frac{dI}{dt} + (I^2)\frac{dR}{dt}.$$ Substituting the values: $$\frac{dP}{dt} = 2(5)(40)(0.2) + (5^2)(0.5) = 80 + 12.5 = 92.5\text{ W/s}.$$ The current contributes \(80\text{ W/s}\) while the resistance contributes \(12.5\text{ W/s}\). Thus, the <strong>current fluctuation dominates</strong> because power scales quadratically with current (\(I^2\)).</li>
+                        </ol>
+                    </div>
+                </details>
+            </article>
+        </div>
+    </section>
+</div>
