@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alexandros Kafkas — Mathematics</title>
+  <style>
+    :root {
+      --sky:   #cfe3f7;   /* soft blue  */
+      --mint:  #d6efe3;   /* soft green */
+      --blush: #f6dbe6;   /* soft pink  */
+      --card:  rgba(255, 255, 255, 0.72);
+      --ink:   #2e3440;
+      --muted: #6b7384;
+      --link:  #3f6fae;
+      --link-hover: #c0668e;
+      --rule:  linear-gradient(90deg, #9cc3ea, #9fd8bd, #eeb3ca);
+      --chip:  rgba(255, 255, 255, 0.6);
+      --chip-border: rgba(120, 150, 190, 0.25);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --sky:   #1f2a3d;
+        --mint:  #1d3330;
+        --blush: #3a2533;
+        --card:  rgba(20, 24, 32, 0.66);
+        --ink:   #e4e8f0;
+        --muted: #a3abbd;
+        --link:  #9cc3ea;
+        --link-hover: #f0b3cc;
+        --chip:  rgba(255, 255, 255, 0.06);
+        --chip-border: rgba(156, 195, 234, 0.2);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body {
+      margin: 0; min-height: 100vh; padding: 3rem 1rem;
+      font-family: Georgia, "Times New Roman", serif; line-height: 1.65;
+      color: var(--ink);
+      background: linear-gradient(160deg, var(--sky) 0%, var(--mint) 50%, var(--blush) 100%) fixed;
+    }
+    main {
+      max-width: 42rem; margin: 0 auto; padding: 2.5rem 2rem;
+      background: var(--card);
+      border-radius: 1.25rem;
+      box-shadow: 0 10px 40px rgba(80, 100, 140, 0.12);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    h1 { margin: 0 0 0.2rem; font-weight: normal; letter-spacing: 0.02em; font-size: 2.1rem; }
+    .sub { margin-top: 0; color: var(--muted); font-size: 0.95rem; }
+    h2 {
+      margin-top: 2.4rem; font-weight: normal; letter-spacing: 0.03em;
+      padding-bottom: 0.35rem;
+      background: var(--rule) bottom / 100% 2px no-repeat;
+    }
+    h3 { margin-bottom: 0.5rem; font-size: 1.05rem; }
+    ul.links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    ul.links a {
+      display: inline-block; padding: 0.2rem 0.8rem; border-radius: 999px;
+      background: var(--chip); border: 1px solid var(--chip-border);
+      font-size: 0.92rem;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    ul.links a:hover { border-color: var(--link-hover); text-decoration: none; }
+    a { color: var(--link); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
+    footer { margin-top: 3rem; font-size: 0.85rem; color: var(--muted); text-align: center; }
+    @media (max-width: 480px) { main { padding: 1.75rem 1.25rem; } h1 { font-size: 1.7rem; } }
+  </style>
+</head>
+<body>
+<main>
+
+  <h1>Alexandros Kafkas</h1>
+  <p class="sub">Teaching Assistant Professor · Department of Mathematics · University of Tennessee, Knoxville<br>
+     akafkas [at] utk [dot] edu</p>
+
+  <p>I completed my PhD in Mathematics at Purdue University in August 2025, specializing in
+     algebraic geometry. My dissertation developed a version of the equivariant Riemann–Roch
+     theorem for equivariant line bundles.</p>
+
+  <h2>Current Teaching</h2>
+
+  <h3>MATH 241: Calculus III</h3>
+  <ul class="links">
+    <li><a href="math241/"><strong>Course page</strong></a></li>
+    <li><a href="https://drive.google.com/file/d/167S5Iv2mXiC1mfta_doFUJWq6lxzu-ss/view?usp=sharing">Syllabus</a></li>
+    <li><a href="https://drive.google.com/file/d/1IEwQPQi9cUZ01Nio6t2Lt6Mkjf-Ruq6v/view?usp=sharing">Calendar</a></li>
+    <li><a href="https://drive.google.com/file/d/1sCoy6_B6JjKuhHrpGZRMhwvX2dEoxcnG/view?usp=sharing">Lesson Notes</a></li>
+    <li><a href="https://drive.google.com/file/d/1eIVF5dXS1QL4Cw25LUj6UKggfcyHfC7d/view?usp=sharing">Recitation Notes</a></li>
+    <li><a href="https://drive.google.com/file/d/1yD83hj__x02BSBZvQWTI4TGHzU1B5xRk/view?usp=sharing">Quizzes</a></li>
+  </ul>
+
+  <h3>MATH 142: Calculus II</h3>
+  <ul class="links">
+    <!-- TODO: replace # with the Google Drive links for MATH 142 -->
+    <li><a href="#">Syllabus</a></li>
+    <li><a href="#">Lesson Notes</a></li>
+  </ul>
+
+  <h2>Past Teaching</h2>
+  <p>Purdue University: MATH 15500, 15800, 16010, 16020, 16200 (2020–2022).
+     <a href="https://sites.google.com/view/akafkas/teaching/at-purdue-university">Course pages</a></p>
+
+  <footer>Last updated September 2026</footer>
+
+</main>
+</body>
+</html>
