@@ -3,24 +3,62 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jane Doe — Mathematics</title>
-  <!-- MathJax: renders LaTeX like $\int_M \omega$ -->
-  <script>
-    MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']] } };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <title>Alexandros Kafkas — Mathematics</title>
   <style>
     body { max-width: 42rem; margin: 3rem auto; padding: 0 1rem;
-           font-family: Georgia, serif; line-height: 1.6; }
+           font-family: Georgia, "Times New Roman", serif; line-height: 1.6;
+           color: #222; background: #fff; }
+    h1 { margin-bottom: 0.2rem; }
+    .sub { margin-top: 0; color: #555; }
+    h2 { margin-top: 2.2rem; border-bottom: 1px solid #ddd; padding-bottom: 0.2rem; }
+    h3 { margin-bottom: 0.3rem; }
+    ul.links { list-style: none; padding: 0; margin: 0; }
+    ul.links li { display: inline; }
+    ul.links li + li::before { content: " · "; color: #999; }
+    a { color: #1a5fb4; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { margin-top: 3rem; font-size: 0.9rem; color: #777; }
+    @media (prefers-color-scheme: dark) {
+      body { color: #ddd; background: #161616; }
+      .sub, footer { color: #aaa; }
+      h2 { border-color: #333; }
+      a { color: #78aeed; }
+    }
   </style>
 </head>
 <body>
-  <h1>Jane Doe</h1>
-  <p>Mathematician. Research in algebraic geometry.</p>
-  <h2>Teaching</h2>
-  <ul><li>Calculus III — <a href="calc3.html">course page</a></li></ul>
-  <h2>Papers</h2>
-  <ul><li><a href="papers/preprint.pdf">A preprint</a> (PDF)</li></ul>
-  <p>Euler: $e^{i\pi} + 1 = 0$</p>
+
+  <h1>Alexandros Kafkas</h1>
+  <p class="sub">Teaching Assistant Professor · Department of Mathematics · University of Tennessee, Knoxville<br>
+     akafkas [at] utk [dot] edu</p>
+
+  <p>I completed my PhD in Mathematics at Purdue University in August 2025, specializing in
+     algebraic geometry. My dissertation developed a version of the equivariant Riemann–Roch
+     theorem for equivariant line bundles.</p>
+
+  <h2>Current Teaching</h2>
+
+  <h3>MATH 241: Calculus III</h3>
+  <ul class="links">
+    <li><a href="https://drive.google.com/file/d/167S5Iv2mXiC1mfta_doFUJWq6lxzu-ss/view?usp=sharing">Syllabus</a></li>
+    <li><a href="https://drive.google.com/file/d/1IEwQPQi9cUZ01Nio6t2Lt6Mkjf-Ruq6v/view?usp=sharing">Calendar</a></li>
+    <li><a href="https://drive.google.com/file/d/1sCoy6_B6JjKuhHrpGZRMhwvX2dEoxcnG/view?usp=sharing">Lesson Notes</a></li>
+    <li><a href="https://drive.google.com/file/d/1eIVF5dXS1QL4Cw25LUj6UKggfcyHfC7d/view?usp=sharing">Recitation Notes</a></li>
+    <li><a href="https://drive.google.com/file/d/1yD83hj__x02BSBZvQWTI4TGHzU1B5xRk/view?usp=sharing">Quizzes</a></li>
+  </ul>
+
+  <h3>MATH 142: Calculus II</h3>
+  <ul class="links">
+    <!-- TODO: replace # with the Google Drive links for MATH 142 -->
+    <li><a href="#">Syllabus</a></li>
+    <li><a href="#">Lesson Notes</a></li>
+  </ul>
+
+  <h2>Past Teaching</h2>
+  <p>Purdue University: MATH 15500, 15800, 16010, 16020, 16200 (2020–2022).
+     <a href="https://sites.google.com/view/akafkas/teaching/at-purdue-university">Course pages</a></p>
+
+  <footer>Last updated September 2026</footer>
+
 </body>
 </html>
