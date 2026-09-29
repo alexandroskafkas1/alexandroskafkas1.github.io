@@ -9,6 +9,9 @@
       --sky:   #cfe3f7;   /* soft blue  */
       --mint:  #d6efe3;   /* soft green */
       --blush: #f6dbe6;   /* soft pink  */
+      --blob-a: rgba(120, 175, 240, 0.55);  /* blue  */
+      --blob-b: rgba(120, 214, 170, 0.50);  /* green */
+      --blob-c: rgba(240, 140, 180, 0.50);  /* pink  */
       --card:  rgba(255, 255, 255, 0.72);
       --ink:   #2e3440;
       --muted: #6b7384;
@@ -23,6 +26,9 @@
         --sky:   #1f2a3d;
         --mint:  #1d3330;
         --blush: #3a2533;
+        --blob-a: rgba(80, 130, 220, 0.45);
+        --blob-b: rgba(60, 170, 140, 0.40);
+        --blob-c: rgba(210, 90, 150, 0.40);
         --card:  rgba(20, 24, 32, 0.66);
         --ink:   #e4e8f0;
         --muted: #a3abbd;
@@ -41,7 +47,20 @@
       color: var(--ink);
       background: linear-gradient(160deg, var(--sky) 0%, var(--mint) 50%, var(--blush) 100%) fixed;
     }
+
+    /* Cursor-following color field. Three blobs chase the pointer at different
+       speeds (see script), so the colors stretch and blend smoothly. */
+    #field {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(38vmax 38vmax at var(--ax, 30%) var(--ay, 30%), var(--blob-a), transparent 70%),
+        radial-gradient(34vmax 34vmax at var(--bx, 60%) var(--by, 50%), var(--blob-b), transparent 70%),
+        radial-gradient(30vmax 30vmax at var(--cx, 50%) var(--cy, 70%), var(--blob-c), transparent 70%);
+      filter: blur(30px) saturate(1.15);
+    }
+
     main {
+      position: relative; z-index: 1;
       max-width: 42rem; margin: 0 auto; padding: 2.5rem 2rem;
       background: var(--card);
       border-radius: 1.25rem;
@@ -71,6 +90,7 @@
   </style>
 </head>
 <body>
+<div id="field" aria-hidden="true"></div>
 <main>
 
   <h1>Alexandros Kafkas</h1>
@@ -108,5 +128,50 @@
   <footer>Last updated September 2026</footer>
 
 </main>
+
+<script>
+(function () {
+  var field = document.getElementById('field');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Each blob eases toward the pointer at its own rate and offset,
+  // which produces the smooth, stretchy color deformation.
+  var blobs = [
+    { k: 'a', ease: 0.060, ox:  0.00, oy:  0.00, x: 0.30, y: 0.30 },
+    { k: 'b', ease: 0.035, ox:  0.12, oy: -0.10, x: 0.60, y: 0.50 },
+    { k: 'c', ease: 0.020, ox: -0.14, oy:  0.12, x: 0.50, y: 0.70 }
+  ];
+  var target = { x: 0.5, y: 0.4 };
+  var lastMove = 0;
+
+  function onMove(e) {
+    target.x = e.clientX / window.innerWidth;
+    target.y = e.clientY / window.innerHeight;
+    lastMove = performance.now();
+  }
+  window.addEventListener('pointermove', onMove, { passive: true });
+  window.addEventListener('pointerdown', onMove, { passive: true });
+
+  function frame(t) {
+    // When the pointer is idle, drift gently so the page never looks frozen.
+    var idle = !lastMove || t - lastMove > 2500;
+    var tx = target.x, ty = target.y;
+    if (idle && !reduce) {
+      tx = 0.5 + 0.28 * Math.sin(t / 4200);
+      ty = 0.45 + 0.28 * Math.cos(t / 5300);
+    }
+    for (var i = 0; i < blobs.length; i++) {
+      var b = blobs[i];
+      var wobble = reduce ? 0 : 0.03 * Math.sin(t / 1800 + i * 2);
+      b.x += (tx + b.ox + wobble - b.x) * b.ease;
+      b.y += (ty + b.oy + wobble - b.y) * b.ease;
+      field.style.setProperty('--' + b.k + 'x', (b.x * 100).toFixed(2) + '%');
+      field.style.setProperty('--' + b.k + 'y', (b.y * 100).toFixed(2) + '%');
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>
