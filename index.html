@@ -1,96 +1,87 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alexandros Kafkas — Mathematics</title>
+  <title>Alexandros Kafkas — Soothing</title>
   <style>
     :root {
-      --sky:   #cfe3f7;   /* soft blue  */
-      --mint:  #d6efe3;   /* soft green */
-      --blush: #f6dbe6;   /* soft pink  */
-      --blob-a: rgba(120, 175, 240, 0.55);  /* blue  */
-      --blob-b: rgba(120, 214, 170, 0.50);  /* green */
-      --blob-c: rgba(240, 140, 180, 0.50);  /* pink  */
-      --card:  rgba(255, 255, 255, 0.72);
-      --ink:   #2e3440;
-      --muted: #6b7384;
-      --link:  #3f6fae;
-      --link-hover: #c0668e;
-      --rule:  linear-gradient(90deg, #9cc3ea, #9fd8bd, #eeb3ca);
-      --chip:  rgba(255, 255, 255, 0.6);
-      --chip-border: rgba(120, 150, 190, 0.25);
+      --base:#ebeae4; --ink:#262c2f; --muted:#5a6569; --link:#2f6676; --link-hover:#b07282;
+      --card:rgba(250,249,246,0.86); --edge:rgba(70,90,95,0.13); --chip:rgba(255,255,255,0.55);
+      --rule:linear-gradient(90deg,#a9d3d8,#cfe3dc,#e7d6d9);
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --sky:   #1f2a3d;
-        --mint:  #1d3330;
-        --blush: #3a2533;
-        --blob-a: rgba(80, 130, 220, 0.45);
-        --blob-b: rgba(60, 170, 140, 0.40);
-        --blob-c: rgba(210, 90, 150, 0.40);
-        --card:  rgba(20, 24, 32, 0.66);
-        --ink:   #e4e8f0;
-        --muted: #a3abbd;
-        --link:  #9cc3ea;
-        --link-hover: #f0b3cc;
-        --chip:  rgba(255, 255, 255, 0.06);
-        --chip-border: rgba(156, 195, 234, 0.2);
-      }
-    }
-
+    /* graded grey room: lighter at the top, soft slate toward the bottom */
+    body { background: linear-gradient(165deg, #eef2f0 0%, #dfe9ea 38%, #e6e3ee 72%, #efe3e1 100%) fixed; }
+    /* slow-moving color clouds: aqua, sage, lilac, peach */
+    body::before, body::after { content:""; position:fixed; z-index:0; border-radius:50%; pointer-events:none; filter:blur(70px); }
+    body::before { width:70vmax; height:70vmax; left:-20vmax; top:-18vmax;
+      background:
+        radial-gradient(circle at 35% 40%, rgba(150,215,225,0.70), transparent 62%),
+        radial-gradient(circle at 75% 70%, rgba(190,175,235,0.45), transparent 60%);
+      animation: drift1 38s ease-in-out infinite alternate; }
+    body::after { width:70vmax; height:70vmax; right:-22vmax; bottom:-22vmax;
+      background:
+        radial-gradient(circle at 60% 55%, rgba(255,205,190,0.55), transparent 62%),
+        radial-gradient(circle at 30% 30%, rgba(170,225,200,0.55), transparent 60%);
+      animation: drift2 46s ease-in-out infinite alternate; }
+    @keyframes drift1 { to { transform: translate(22vmax, 16vmax) rotate(40deg) scale(1.12); } }
+    @keyframes drift2 { to { transform: translate(-20vmax, -14vmax) rotate(-35deg) scale(0.92); } }    /* aqua orbs that chase the cursor */
+    #field { display:block; z-index:0; filter:blur(40px) saturate(1.1);
+      background:
+        radial-gradient(24vmax 24vmax at var(--mx) var(--my), rgba(255,255,255,0.75), transparent 72%),
+        radial-gradient(36vmax 36vmax at var(--ax) var(--ay), rgba(130,205,218,0.60), transparent 72%),
+        radial-gradient(40vmax 40vmax at var(--bx) var(--by), rgba(185,170,235,0.45), transparent 72%),
+        radial-gradient(42vmax 42vmax at var(--cx) var(--cy), rgba(255,200,185,0.45), transparent 72%); }    /* pool-tile grid near the cursor, drifting slowly like light through water */
+    #grid { display:block; z-index:1;
+      background-image: linear-gradient(rgba(90,150,160,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(90,150,160,0.35) 1px, transparent 1px);
+      background-size: 56px 56px; animation: tiles 40s linear infinite;
+      -webkit-mask-image: radial-gradient(22vmax 22vmax at var(--mx) var(--my), #000, transparent 100%);
+              mask-image: radial-gradient(22vmax 22vmax at var(--mx) var(--my), #000, transparent 100%); }
+    #grain { display:block; z-index:2; opacity:0.22; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .28  0 0 0 0 .25  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
     * { box-sizing: border-box; }
     html { min-height: 100%; }
     body {
       margin: 0; min-height: 100vh; padding: 3rem 1rem;
       font-family: Georgia, "Times New Roman", serif; line-height: 1.65;
-      color: var(--ink);
-      background: linear-gradient(160deg, var(--sky) 0%, var(--mint) 50%, var(--blush) 100%) fixed;
+      color: var(--ink); background: var(--base);
     }
-
-    /* Cursor-following color field. Three blobs chase the pointer at different
-       speeds (see script), so the colors stretch and blend smoothly. */
-    #field {
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background:
-        radial-gradient(38vmax 38vmax at var(--ax, 30%) var(--ay, 30%), var(--blob-a), transparent 70%),
-        radial-gradient(34vmax 34vmax at var(--bx, 60%) var(--by, 50%), var(--blob-b), transparent 70%),
-        radial-gradient(30vmax 30vmax at var(--cx, 50%) var(--cy, 70%), var(--blob-c), transparent 70%);
-      filter: blur(30px) saturate(1.15);
-    }
-
+    #field, #grid, #grain, #vignette { position: fixed; inset: 0; pointer-events: none; display: none; }
     main {
-      position: relative; z-index: 1;
+      position: relative; z-index: 5;
       max-width: 42rem; margin: 0 auto; padding: 2.5rem 2rem;
-      background: var(--card);
-      border-radius: 1.25rem;
-      box-shadow: 0 10px 40px rgba(80, 100, 140, 0.12);
-      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      background: var(--card); border: 1px solid var(--edge);
+      border-radius: 1rem; box-shadow: 0 8px 40px rgba(60, 60, 50, 0.07);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     }
     h1 { margin: 0 0 0.2rem; font-weight: normal; letter-spacing: 0.02em; font-size: 2.1rem; }
     .sub { margin-top: 0; color: var(--muted); font-size: 0.95rem; }
     h2 {
-      margin-top: 2.4rem; font-weight: normal; letter-spacing: 0.03em;
-      padding-bottom: 0.35rem;
+      margin-top: 2.4rem; font-weight: normal; letter-spacing: 0.03em; padding-bottom: 0.35rem;
       background: var(--rule) bottom / 100% 2px no-repeat;
     }
     h3 { margin-bottom: 0.5rem; font-size: 1.05rem; }
     ul.links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
     ul.links a {
       display: inline-block; padding: 0.2rem 0.8rem; border-radius: 999px;
-      background: var(--chip); border: 1px solid var(--chip-border);
-      font-size: 0.92rem;
+      background: var(--chip); border: 1px solid var(--edge); font-size: 0.92rem;
       transition: background 0.2s, color 0.2s, border-color 0.2s;
     }
-    ul.links a:hover { border-color: var(--link-hover); text-decoration: none; }
+    ul.links a:hover { border-color: var(--link-hover); text-decoration: none; background: rgba(255,255,255,0.8); }
     a { color: var(--link); text-decoration: none; transition: color 0.2s; }
     a:hover { color: var(--link-hover); text-decoration: underline; }
     footer { margin-top: 3rem; font-size: 0.85rem; color: var(--muted); text-align: center; }
     @media (max-width: 480px) { main { padding: 1.75rem 1.25rem; } h1 { font-size: 1.7rem; } }
-  </style>
+    /* depth */
+    main { box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), inset 0 -1px 0 rgba(60,70,70,0.04),
+      0 2px 4px rgba(50,60,60,0.05), 0 14px 28px rgba(50,60,60,0.07), 0 44px 90px rgba(50,75,80,0.12); }
+    ul.links a { box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 1px 3px rgba(50,60,60,0.10), 0 4px 10px rgba(50,60,60,0.05); }
+    ul.links a:hover { box-shadow: inset 0 1px 0 #fff, 0 2px 4px rgba(50,60,60,0.12), 0 8px 16px rgba(50,60,60,0.08); }
+    #vignette { display:block; z-index:1; background: radial-gradient(ellipse at 50% 35%, transparent 40%, rgba(70,90,110,0.10) 100%); }  </style>
 </head>
 <body>
 <div id="field" aria-hidden="true"></div>
+<div id="vignette" aria-hidden="true"></div>
+<div id="grain" aria-hidden="true"></div>
 <main>
 
   <h1>Alexandros Kafkas</h1>
@@ -107,7 +98,7 @@
   <ul class="links">
     <li><a href="math241/syllabus.html">Syllabus</a></li>
     <li><a href="math241/calendar.html">Calendar</a></li>
-    <li><a href="math241/lesson-notes.html">Lesson Notes</a></li>
+    <li><a href="https://drive.google.com/file/d/1sCoy6_B6JjKuhHrpGZRMhwvX2dEoxcnG/view?usp=sharing">Lesson Notes</a></li>
     <li><a href="math241/recitation-notes.html">Recitation Notes</a></li>
     <li><a href="math241/quizzes.html">Quizzes</a></li>
   </ul>
@@ -116,7 +107,7 @@
   <ul class="links">
     <li><a href="math142/syllabus.html">Syllabus</a></li>
     <li><a href="math142/calendar.html">Calendar</a></li>
-    <li><a href="math142/lesson-notes.html">Lesson Notes</a></li>
+    <li><a href="#">Lesson Notes</a></li>
     <li><a href="math142/recitation-notes.html">Recitation Notes</a></li>
     <li><a href="math142/quizzes.html">Quizzes</a></li>
   </ul>
@@ -128,46 +119,35 @@
   <footer>Last updated September 2026</footer>
 
 </main>
-
 <script>
 (function () {
-  var field = document.getElementById('field');
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Each blob eases toward the pointer at its own rate and offset,
-  // which produces the smooth, stretchy color deformation.
+  var root = document.documentElement.style;
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0.5 : 1;
+  // blobs ease toward the pointer at different speeds; "m" is the near-instant spotlight
   var blobs = [
-    { k: 'a', ease: 0.060, ox:  0.00, oy:  0.00, x: 0.30, y: 0.30 },
-    { k: 'b', ease: 0.035, ox:  0.12, oy: -0.10, x: 0.60, y: 0.50 },
-    { k: 'c', ease: 0.020, ox: -0.14, oy:  0.12, x: 0.50, y: 0.70 }
+    { k: 'm', ease: 0.18,  ox:  0.00, oy:  0.00, x: 0.5, y: 0.4 },
+    { k: 'a', ease: 0.050, ox:  0.00, oy:  0.00, x: 0.3, y: 0.3 },
+    { k: 'b', ease: 0.030, ox:  0.14, oy: -0.10, x: 0.6, y: 0.5 },
+    { k: 'c', ease: 0.018, ox: -0.16, oy:  0.12, x: 0.5, y: 0.7 }
   ];
-  var target = { x: 0.5, y: 0.4 };
-  var lastMove = 0;
-
+  var target = { x: 0.5, y: 0.4 }, lastMove = 0;
   function onMove(e) {
     target.x = e.clientX / window.innerWidth;
     target.y = e.clientY / window.innerHeight;
     lastMove = performance.now();
   }
-  window.addEventListener('pointermove', onMove, { passive: true });
-  window.addEventListener('pointerdown', onMove, { passive: true });
-
+  addEventListener('pointermove', onMove, { passive: true });
+  addEventListener('pointerdown', onMove, { passive: true });
   function frame(t) {
-    // When the pointer is idle, drift gently so the page never looks frozen.
-    var idle = !lastMove || t - lastMove > 2500;
-    var tx = target.x, ty = target.y;
-    if (idle && !reduce) {
-      tx = 0.5 + 0.28 * Math.sin(t / 4200);
-      ty = 0.45 + 0.28 * Math.cos(t / 5300);
-    }
-    for (var i = 0; i < blobs.length; i++) {
-      var b = blobs[i];
-      var wobble = reduce ? 0 : 0.03 * Math.sin(t / 1800 + i * 2);
-      b.x += (tx + b.ox + wobble - b.x) * b.ease;
-      b.y += (ty + b.oy + wobble - b.y) * b.ease;
-      field.style.setProperty('--' + b.k + 'x', (b.x * 100).toFixed(2) + '%');
-      field.style.setProperty('--' + b.k + 'y', (b.y * 100).toFixed(2) + '%');
-    }
+    var idle = !lastMove || t - lastMove > 2500, tx = target.x, ty = target.y;
+    if (idle) { tx = 0.5 + 0.28 * calm * Math.sin(t / 4200); ty = 0.45 + 0.28 * calm * Math.cos(t / 5300); }
+    blobs.forEach(function (b, i) {
+      var w = b.k === 'm' ? 0 : 0.07 * calm * Math.sin(t / 2600 + i * 2);
+      b.x += (tx + b.ox + w - b.x) * b.ease;
+      b.y += (ty + b.oy + w - b.y) * b.ease;
+      root.setProperty('--' + b.k + 'x', (b.x * 100).toFixed(2) + '%');
+      root.setProperty('--' + b.k + 'y', (b.y * 100).toFixed(2) + '%');
+    });
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
