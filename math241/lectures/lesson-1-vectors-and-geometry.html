@@ -16,96 +16,61 @@
 
 <style>
   :root {
-    --text: #1f2933;
-    --muted: #5f6b7a;
-    --bg: #ffffff;
-    --panel: #f6f7f9;
-    --line: #dfe3e8;
-    --accent: #c2410c;       /* the only accent color: headings, labels, rules */
-    --accent-soft: #fff4ec;
+    color-scheme: light;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --thm: #2f5d8a;      /* definitions, key formulas, headings label */
+    --goal: #2e7d5b;     /* learning goals */
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --text: #e6e9ee;
-      --muted: #9aa5b3;
-      --bg: #15181d;
-      --panel: #1d2128;
-      --line: #323843;
-      --accent: #ff9a52;
-      --accent-soft: #2a2119;
-    }
-  }
-
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    padding: 24px 16px 64px;
-    background: var(--bg);
+    padding: 32px 16px 72px;
+    background: #ffffff;
     color: var(--text);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-family: "Latin Modern Roman", "Computer Modern", Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    line-height: 1.65;
   }
-  main { max-width: 760px; margin: 0 auto; }
+  main { max-width: 740px; margin: 0 auto; }
 
-  h1 {
-    font-size: 2rem;
-    line-height: 1.25;
-    margin: 0 0 8px;
-    padding-bottom: 14px;
-    border-bottom: 4px solid #f77f00;
+  /* Title: small-caps label above, thin rule below */
+  .eyebrow {
+    display: block;
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+    color: var(--thm);
+    font-size: 1.05rem;
   }
-  h2 {
-    font-size: 1.45rem;
-    margin: 56px 0 16px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--line);
-  }
-  h3 { font-size: 1.15rem; margin: 32px 0 8px; }
-  p, ul, ol { margin: 0 0 16px; }
+  h1 { font-size: 2rem; line-height: 1.25; margin: 0 0 28px; padding-bottom: 10px; border-bottom: 0.5px solid #999; }
+  h2 { font-size: 1.5rem; margin: 52px 0 14px; }
+  h3 { font-size: 1.2rem; margin: 30px 0 8px; }
+  p, ul, ol { margin: 0 0 14px; }
   li { margin-bottom: 4px; }
 
-  /* Learning goals */
-  .goals {
-    background: var(--accent-soft);
-    border-radius: 8px;
-    padding: 16px 24px;
-    margin: 24px 0 8px;
-  }
-  .goals h2 { font-size: 1.1rem; margin: 0 0 8px; border: 0; padding: 0; color: var(--accent); }
-  .goals ul { margin: 0; padding-left: 20px; }
-
-  /* Boxes: one shared shape, small label on top, only 3 variants */
-  .box {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-left: 4px solid var(--muted);
-    border-radius: 6px;
-    padding: 14px 20px;
-    margin: 24px 0;
-  }
+  /* Boxes (same idea as the tcolorbox setup) */
+  .box { padding: 6px 14px 6px 16px; margin: 22px 0; border-left: 2.5px solid var(--thm); }
   .box > :last-child { margin-bottom: 0; }
-  .label {
-    display: block;
-    margin: 0 0 6px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .definition, .key { border-left-color: var(--accent); }
-  .definition .label, .key .label { color: var(--accent); }
-  .solution { background: transparent; border-style: dashed; border-left-style: solid; }
+  .label { font-weight: 700; margin: 4px 0 6px; display: block; }
+  .definition, .key { background: #eef2f7; }              /* thm color at ~5% */
+  .definition .label, .key .label { color: var(--thm); }
+  .example  { border-left: 1.5px solid var(--muted); }
+  .example .label { color: var(--muted); }
+  .solution { border-left: 1.5px solid #c9c9c9; }
+  .solution .label { font-weight: 400; font-style: italic; color: var(--muted); }
+  .goals { background: #edf5f1; border-left: 2.5px solid var(--goal); padding: 6px 16px 6px 16px; margin: 0 0 8px; }
+  .goals h2 { font-size: 1.05rem; margin: 4px 0 4px; color: var(--goal); }
+  .goals ul { margin: 0 0 6px; padding-left: 20px; }
 
-  mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; margin: 12px 0 !important; }
-  img { max-width: 100%; height: auto; display: block; margin: 24px auto; }
+  mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; margin: 10px 0 !important; }
+  img { max-width: 100%; height: auto; display: block; margin: 22px auto; }
 </style>
 </head>
 <body>
 <main>
     <header>
-        <h1>Lesson 1: Review of Vectors &amp; Geometry</h1>
+        <span class="eyebrow">Lesson 1</span>
+        <h1>Review of Vectors &amp; Geometry</h1>
     </header>
 
     <aside class="goals" aria-label="Learning Goals">
