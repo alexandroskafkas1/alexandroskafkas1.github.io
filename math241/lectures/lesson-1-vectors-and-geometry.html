@@ -52,7 +52,7 @@
   .box { padding: 6px 14px 6px 16px; margin: 22px 0; border-left: 2.5px solid var(--thm); }
   .box > :last-child { margin-bottom: 0; }
   .label { font-weight: 700; margin: 4px 0 6px; display: block; }
-  .definition, .key { background: #eef2f7; }              /* thm color at ~5% */
+  .definition, .key { background: #eef2f7; }               /* thm color at ~5% */
   .definition .label, .key .label { color: var(--thm); }
   .example  { border-left: 1.5px solid var(--muted); }
   .example .label { color: var(--muted); }
@@ -76,10 +76,10 @@
     <aside class="goals" aria-label="Learning Goals">
         <h2>Goals</h2>
         <ul>
-            <li>Define what a vector is.</li>
-            <li>Add vectors and multiply them by scalars.</li>
-            <li>Find the length (magnitude) of a vector.</li>
-            <li>Understand unit vectors and direction.</li>
+            <li>Understand vectors as elements of a vector space and as directional displacements.</li>
+            <li>Distinguish points from displacement vectors.</li>
+            <li>Perform vector addition and scalar multiplication algebraically and geometrically.</li>
+            <li>Compute Euclidean norms (magnitudes) and construct unit vectors.</li>
         </ul>
     </aside>
 
@@ -87,31 +87,49 @@
         <h2>What is a Vector?</h2>
         <div class="box definition">
             <span class="label">Definition: Vector</span>
-            <p>A <em>vector</em> is a mathematical object that has both:</p>
-            <ol>
-                <li><strong>Magnitude</strong> &mdash; i.e., length;</li>
-                <li><strong>Direction</strong> &mdash; i.e., where it points.</li>
-            </ol>
+            <p>Formally, a <strong>vector</strong> is an element of a vector space. In concrete Euclidean space \(\mathbb{R}^n\), a vector is an ordered \(n\)-tuple of real numbers equipped with component-wise addition and scalar multiplication.</p>
         </div>
-        <p>Vectors are used to represent physical quantities that are not fully described by a single real number (scalar), such as velocity and force.</p>
-        <p>The vector \(\overrightarrow{AB}\) starting from point \(A=(a_1,a_2,a_3)\) to point \(B=(b_1,b_2,b_3)\) is given by:</p>
+
+        <p>Geometrically, a vector represents a <strong>directional displacement</strong> (or translation) in space. It is crucial to distinguish between <em>points</em> and <em>vectors</em>:</p>
+        <ul>
+            <li>A <strong>point</strong> specifies a fixed location in space.</li>
+            <li>A <strong>vector</strong> specifies the relative change in position required to translate one point to another.</li>
+        </ul>
+
+        <p>Given an initial point \(A=(a_1, a_2, a_3)\) and a terminal point \(B=(b_1, b_2, b_3)\), the displacement vector \(\overrightarrow{AB}\) from \(A\) to \(B\) is obtained by taking the coordinate difference:</p>
         \[ \overrightarrow{AB} = \langle b_1-a_1,\ b_2-a_2,\ b_3-a_3 \rangle \]
-        <p>The <strong>magnitude</strong> (length) of a vector \(\vec{u} = \langle u_1,\ u_2,\ u_3 \rangle\) is:</p>
-        \[ \|\vec{u}\| = \sqrt{u_1^2 + u_2^2 + u_3^2} \]
+
+        <p>Because a displacement carries both an extent and an orientation, every vector \(\vec{u} \in \mathbb{R}^n\) naturally possesses two geometric invariants:</p>
+        <ol>
+            <li><strong>Magnitude (Euclidean Norm):</strong> The overall distance of the displacement, denoted \(\|\vec{u}\|\):
+                \[ \|\vec{u}\| = \sqrt{u_1^2 + u_2^2 + u_3^2} \]
+            </li>
+            <li><strong>Direction:</strong> The orientation of the displacement along its line of action, formalized by normalizing the vector when \(\vec{u} \neq \mathbf{0}\).</li>
+        </ol>
 
         <div class="box example">
             <span class="label">Example 1</span>
             <p>Let \(A=(1,2,3)\) and \(B=(4,6,3)\).</p>
             <ol>
-                <li>Find the vector \(\overrightarrow{AB}\).</li>
-                <li>Compute its magnitude.</li>
+                <li>Find the displacement vector \(\overrightarrow{AB}\).</li>
+                <li>Compute its magnitude \(\|\overrightarrow{AB}\|\).</li>
+            </ol>
+        </div>
+        <div class="box solution">
+            <span class="label">Solution</span>
+            <ol>
+                <li>\(\overrightarrow{AB} = \langle 4-1,\ 6-2,\ 3-3 \rangle = \langle 3,\ 4,\ 0 \rangle\)</li>
+                <li>\(\|\overrightarrow{AB}\| = \sqrt{3^2 + 4^2 + 0^2} = \sqrt{9 + 16 + 0} = \sqrt{25} = 5\)</li>
             </ol>
         </div>
     </section>
 
     <section>
         <h2>Vector Addition &amp; Scalar Multiplication</h2>
-        <p>Two vectors \(\vec{u}\) and \(\vec{v}\) can be added by adding their corresponding coordinate components (coordinate-wise). Geometrically, this corresponds to the <strong>triangle rule</strong> for vector addition.</p>
+        <p>The algebraic structure of a vector space is defined by two fundamental operations: addition and scalar multiplication.</p>
+
+        <h3>Vector Addition</h3>
+        <p>The sum of two vectors \(\vec{u}, \vec{v} \in \mathbb{R}^n\) is computed component-wise. Geometrically, adding two displacement vectors corresponds to applying one displacement after the other, yielding the <strong>triangle rule</strong> (or parallelogram law).</p>
         <img src="figures/lesson-1/Lesson_1_Triangle_Rule.png" alt="Diagram of vectors u (blue) and v (green) from point O, with their sum u+v in red forming a triangle.">
       
         <div class="box example">
@@ -124,36 +142,39 @@
         </div>
 
         <h3>Scalar Multiplication</h3>
-        <p>If \(\lambda \in \mathbb{R}\) is a scalar (a real number) and \(\vec{u}\) is a vector, then the <strong>scalar multiple</strong> \(\lambda\vec{u}\) is the vector whose length is \(|\lambda|\) times the length of \(\vec{u}\), and its direction is:</p>
+        <p>Given a scalar \(\lambda \in \mathbb{R}\) and a vector \(\vec{u}\), the <strong>scalar multiple</strong> \(\lambda\vec{u}\) scales the magnitude of the displacement by a factor of \(|\lambda|\):</p>
+        \[ \|\lambda\vec{u}\| = |\lambda|\|\vec{u}\| \]
+        <p>Algebraically, this scales each component: if \(\vec{u}=\langle u_1, u_2, u_3 \rangle\), then \(\lambda\vec{u} = \langle \lambda u_1, \lambda u_2, \lambda u_3 \rangle\). Geometrically:</p>
         <ul>
-            <li>The same as \(\vec{u}\) if \(\lambda &gt; 0\).</li>
-            <li>Opposite to \(\vec{u}\) if \(\lambda &lt; 0\).</li>
+            <li>If \(\lambda &gt; 0\), the displacement retains its original orientation.</li>
+            <li>If \(\lambda &lt; 0\), the orientation of the displacement is reversed.</li>
+            <li>If \(\lambda = 0\), the result is the zero vector \(\mathbf{0}\), representing zero displacement.</li>
         </ul>
-        <p>Component-wise: if \(\vec{u}=\langle u_1, u_2, u_3 \rangle\), then \(\lambda\vec{u} = \langle \lambda u_1, \lambda u_2, \lambda u_3 \rangle\).</p>
 
         <h3>Standard Basis Vectors</h3>
-        <p>The vectors \(\hat{i}=\langle 1,0,0\rangle\), \(\hat{j}=\langle 0,1,0\rangle\), and \(\hat{k}=\langle 0,0,1\rangle\) are the standard basis vectors of \(\mathbb{R}^3\).</p>
+        <p>Every vector in \(\mathbb{R}^3\) can be expressed uniquely as a linear combination of the standard orthonormal basis vectors \(\hat{i}=\langle 1,0,0\rangle\), \(\hat{j}=\langle 0,1,0\rangle\), and \(\hat{k}=\langle 0,0,1\rangle\):</p>
+        \[ \langle u_1, u_2, u_3 \rangle = u_1\hat{i} + u_2\hat{j} + u_3\hat{k} \]
 
         <div class="box example">
             <span class="label">Example 3</span>
-            <p>Let \(\vec{u}=\hat{i}-2\hat{j}+\hat{k}\) and \(\vec{v}=2\hat{i}+3\hat{j}-\hat{k}\). Find \(2\vec{u}+3\vec{v}\).</p>
+            <p>Let \(\vec{u}=\hat{i}-2\hat{j}+\hat{k}\) and \(\vec{v}=2\hat{i}+3\hat{j}-\hat{k}\). Compute the linear combination \(2\vec{u}+3\vec{v}\).</p>
         </div>
         <div class="box solution">
             <span class="label">Solution</span>
-            \[ \begin{aligned} 2\vec{u}+3\vec{v} &= 2(\hat{i}-2\hat{j}+\hat{k}) + 3(2\hat{i}+3\hat{j}-\hat{k}) \\ &= (2\hat{i}-4\hat{j}+2\hat{k}) + (6\hat{i}+9\hat{j}-3\hat{k}) \\ &= 8\hat{i}+5\hat{j}-\hat{k}. \end{aligned} \]
+            \[ \begin{aligned} 2\vec{u}+3\vec{v} &= 2(\hat{i}-2\hat{j}+\hat{k}) + 3(2\hat{i}+3\hat{j}-\hat{k}) \\ &= (2\hat{i}-4\hat{j}+2\hat{k}) + (6\hat{i}+9\hat{j}-3\hat{k}) \\ &= 8\hat{i}+5\hat{j}-\hat{k} \end{aligned} \]
         </div>
     </section>
 
     <section>
-        <h2>Unit Vectors</h2>
+        <h2>Unit Vectors &amp; Direction</h2>
         <div class="box definition">
             <span class="label">Definition: Unit Vector</span>
-            <p>A vector \(\vec{u}\) is called a <strong>unit vector</strong> if its magnitude is equal to \(1\) &mdash; i.e., \(\|\vec{u}\|=1\).</p>
+            <p>A vector \(\vec{u}\) is a <strong>unit vector</strong> if its Euclidean norm is unity: \(\|\vec{u}\|=1\).</p>
         </div>
         <div class="box key">
-            <span class="label">Key Formula</span>
-            <p>For any non-zero vector \(\vec{w}\), the unit vector in the same direction as \(\vec{w}\) is:</p>
-            \[ \hat{w} = \frac{\vec{w}}{\|\vec{w}\|} \]
+            <span class="label">Key Formula: Normalization</span>
+            <p>Any non-zero displacement \(\vec{w}\) can be decomposed into its magnitude \(\|\vec{w}\|\) and its pure directional unit vector \(\hat{w}\):</p>
+            \[ \vec{w} = \|\vec{w}\|\,\hat{w} \quad \implies \quad \hat{w} = \frac{\vec{w}}{\|\vec{w}\|} \]
         </div>
 
         <div class="box example">
@@ -166,8 +187,10 @@
         <div class="box solution">
             <span class="label">Solution</span>
             <ol>
-                <li>\(\|\vec{u}\| = \sqrt{(-5)^2 + 4^2} = \sqrt{25 + 16} = \sqrt{41}\)<br>\(\hat{u} = \frac{\vec{u}}{\|\vec{u}\|} = \left\langle \frac{-5}{\sqrt{41}},\ \frac{4}{\sqrt{41}} \right\rangle\)</li>
-                <li>\(\|\vec{w}\| = \sqrt{6^2 + (-3)^2 + 4^2} = \sqrt{36 + 9 + 16} = \sqrt{61}\)<br>\(\hat{w} = \frac{\vec{w}}{\|\vec{w}\|} = \frac{6}{\sqrt{61}}\hat{i} - \frac{3}{\sqrt{61}}\hat{j} + \frac{4}{\sqrt{61}}\hat{k}\)</li>
+                <li>\(\|\vec{u}\| = \sqrt{(-5)^2 + 4^2} = \sqrt{41}\)<br>
+                    \(\hat{u} = \frac{\vec{u}}{\|\vec{u}\|} = \left\langle -\frac{5}{\sqrt{41}},\ \frac{4}{\sqrt{41}} \right\rangle\)</li>
+                <li>\(\|\vec{w}\| = \sqrt{6^2 + (-3)^2 + 4^2} = \sqrt{36 + 9 + 16} = \sqrt{61}\)<br>
+                    \(\hat{w} = \frac{\vec{w}}{\|\vec{w}\|} = \frac{6}{\sqrt{61}}\hat{i} - \frac{3}{\sqrt{61}}\hat{j} + \frac{4}{\sqrt{61}}\hat{k}\)</li>
             </ol>
         </div>
     </section>
@@ -185,8 +208,12 @@
         <div class="box solution">
             <span class="label">Solution</span>
             <ol>
-                <li>To land straight north, the westward component of the kayak's velocity must cancel the river's \(4\text{ mph}\) eastward flow.<br>Set \(\vec{v}_{\text{kayak}} = \langle -x, y \rangle\) with \(x^2+y^2=8^2\). The horizontal component must satisfy \(x=4\), so \(y=\sqrt{64-16}=4\sqrt{3}\). Thus the kayaker should aim west of north at angle \(\theta = \arcsin(4/8)=30^\circ\) (i.e., \(30^\circ\) upstream of due north).</li>
-                <li>The ground speed directly across (north) is \(4\sqrt{3}\text{ mph}\). For width \(d = 0.75\text{ mi}\): \[ t = \frac{0.75}{4\sqrt{3}} = \frac{3}{16\sqrt{3}}\text{ hr} \approx 0.108\text{ hr} \approx 6.5\text{ min}. \]</li>
+                <li>Let the net velocity vector be \(\vec{v}_{\text{net}} = \vec{v}_{\text{kayak}} + \vec{v}_{\text{river}}\), where \(\vec{v}_{\text{river}} = \langle 4, 0 \rangle\). To ensure the net displacement is directed straight across the river (due north), the eastward component of \(\vec{v}_{\text{net}}\) must be zero.<br>
+                Letting \(\vec{v}_{\text{kayak}} = \langle -x, y \rangle\) with \(\|\vec{v}_{\text{kayak}}\| = \sqrt{x^2+y^2} = 8\), we require \(x = 4\). Thus:
+                \[ y = \sqrt{8^2 - 4^2} = \sqrt{48} = 4\sqrt{3} \]
+                The heading angle west of due north satisfies \(\sin\theta = \frac{4}{8} = \frac{1}{2}\), meaning the kayaker must steer \(\theta = 30^\circ\) upstream (west of north).</li>
+                <li>The effective northward velocity component is \(v_y = 4\sqrt{3}\text{ mph}\). For a width \(d = 0.75\text{ mi}\):
+                \[ t = \frac{d}{v_y} = \frac{0.75}{4\sqrt{3}} = \frac{3}{16\sqrt{3}}\text{ hr} \approx 0.108\text{ hr} \approx 6.5\text{ min}. \]</li>
             </ol>
         </div>
     </section>
