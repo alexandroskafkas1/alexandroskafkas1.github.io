@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MATH 241: Calculus III Lesson Notes — Alexandros Kafkas</title>
+  <style>
+    :root {
+      --sky:   #cfe3f7;
+      --mint:  #d6efe3;
+      --blush: #f6dbe6;
+      --blob-a: rgba(120, 175, 240, 0.55);
+      --blob-b: rgba(120, 214, 170, 0.50);
+      --blob-c: rgba(240, 140, 180, 0.50);
+      --card:  rgba(255, 255, 255, 0.72);
+      --row:   rgba(255, 255, 255, 0.65);
+      --row-hover: rgba(255, 255, 255, 0.95);
+      --head:  rgba(235, 240, 247, 0.85);
+      --line:  rgba(120, 150, 190, 0.25);
+      --ink:   #2e3440;
+      --muted: #6b7384;
+      --link:  #3f6fae;
+      --link-hover: #c0668e;
+      --accent: #5aa987;
+      --rule:  linear-gradient(90deg, #9cc3ea, #9fd8bd, #eeb3ca);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --sky:   #1f2a3d;
+        --mint:  #1d3330;
+        --blush: #3a2533;
+        --blob-a: rgba(80, 130, 220, 0.45);
+        --blob-b: rgba(60, 170, 140, 0.40);
+        --blob-c: rgba(210, 90, 150, 0.40);
+        --card:  rgba(20, 24, 32, 0.66);
+        --row:   rgba(255, 255, 255, 0.04);
+        --row-hover: rgba(255, 255, 255, 0.10);
+        --head:  rgba(255, 255, 255, 0.08);
+        --line:  rgba(156, 195, 234, 0.2);
+        --ink:   #e4e8f0;
+        --muted: #a3abbd;
+        --link:  #9cc3ea;
+        --link-hover: #f0b3cc;
+        --accent: #6fcf9f;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body {
+      margin: 0; min-height: 100vh; padding: 3rem 1rem;
+      font-family: Georgia, "Times New Roman", serif; line-height: 1.5;
+      color: var(--ink);
+      background: linear-gradient(160deg, var(--sky) 0%, var(--mint) 50%, var(--blush) 100%) fixed;
+    }
+    #field {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(38vmax 38vmax at var(--ax, 30%) var(--ay, 30%), var(--blob-a), transparent 70%),
+        radial-gradient(34vmax 34vmax at var(--bx, 60%) var(--by, 50%), var(--blob-b), transparent 70%),
+        radial-gradient(30vmax 30vmax at var(--cx, 50%) var(--cy, 70%), var(--blob-c), transparent 70%);
+      filter: blur(30px) saturate(1.15);
+    }
+    main {
+      position: relative; z-index: 1;
+      max-width: 46rem; margin: 0 auto; padding: 2.5rem 2rem;
+      background: var(--card);
+      border-radius: 1.25rem;
+      box-shadow: 0 10px 40px rgba(80, 100, 140, 0.12);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    a { color: var(--link); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--link-hover); }
+    .back { font-size: 0.9rem; }
+    h1 { margin: 0.6rem 0 0.2rem; font-weight: normal; letter-spacing: 0.02em; font-size: 2rem; }
+    .sub { margin: 0 0 1.2rem; color: var(--muted); font-size: 0.95rem; }
+
+    /* course switcher */
+    .tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+    .tabs a {
+      padding: 0.25rem 0.9rem; border-radius: 999px; font-size: 0.92rem;
+      background: var(--row); border: 1px solid var(--line);
+    }
+    .tabs a:hover { border-color: var(--link-hover); }
+
+    h2 {
+      margin: 2.4rem 0 1rem; font-weight: normal; letter-spacing: 0.03em;
+      padding-bottom: 0.35rem;
+      background: var(--rule) bottom / 100% 2px no-repeat;
+    }
+
+    /* chapter blocks */
+    details.chapter {
+      margin-bottom: 1.5rem; border: 1px solid var(--line); border-radius: 0.5rem;
+      overflow: hidden; background: var(--row);
+    }
+    details.chapter > summary {
+      list-style: none; cursor: pointer; padding: 0.6rem 0.9rem;
+      background: var(--head); font-size: 0.95rem; font-weight: bold;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    details.chapter > summary::-webkit-details-marker { display: none; }
+    details.chapter > summary::before {
+      content: "\25BE"; font-size: 0.8rem; color: var(--muted); transition: transform 0.15s;
+    }
+    details.chapter:not([open]) > summary::before { transform: rotate(-90deg); }
+
+    ul.lessons { list-style: none; margin: 0; padding: 0; }
+    ul.lessons li { border-top: 1px solid var(--line); border-left: 3px solid var(--accent); }
+    ul.lessons a {
+      display: flex; align-items: center; gap: 0.7rem;
+      padding: 0.7rem 0.9rem; color: var(--ink); font-size: 0.95rem;
+      transition: background 0.15s;
+    }
+    ul.lessons a:hover { background: var(--row-hover); color: var(--link-hover); }
+    ul.lessons .icon { color: var(--link); font-size: 1rem; line-height: 1; }
+    ul.lessons .num { color: var(--muted); }
+    ul.lessons .tag {
+      margin-left: auto; font-size: 0.75rem; color: var(--muted);
+    }
+    /* lessons not posted yet: add class="soon" to the <li> */
+    ul.lessons li.soon { border-left-color: var(--line); }
+    ul.lessons li.soon a { color: var(--muted); pointer-events: none; }
+
+    footer { margin-top: 3rem; font-size: 0.85rem; color: var(--muted); text-align: center; }
+    @media (max-width: 480px) { main { padding: 1.75rem 1.1rem; } h1 { font-size: 1.6rem; } }
+  </style>
+</head>
+<body>
+<div id="field" aria-hidden="true"></div>
+<main>
+
+  <a class="back" href="../index.html">&larr; Home</a>
+  <h1>MATH 241: Calculus III</h1>
+  <p class="sub" style="margin-bottom:0.2rem">Lesson Notes</p>
+  <p class="sub">Alexandros Kafkas · University of Tennessee, Knoxville</p>
+
+  <!-- =====================================================
+       HOW TO EDIT
+       - Add a lesson: copy one <li>...</li> line, change href and title.
+       - Add a chapter: copy a whole <details class="chapter">...</details> block.
+       - Not ready yet? Give the <li> class="soon".
+       - Chapter starts collapsed? Remove the "open" attribute.
+       ===================================================== -->
+
+  <!-- ==================== MATH 241 ==================== -->
+  <details class="chapter" open>
+    <summary>Lesson Notes Ch. 12</summary>
+    <ul class="lessons">
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 1 (12.2)</span> Vectors and Geometry</span></a></li>
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 2 (12.3)</span> The Dot Product</span></a></li>
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 3 (12.4)</span> The Cross Product</span></a></li>
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 4 (12.5)</span> Lines and Planes in R3</span></a></li>
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 5 (12.6)</span> Quadric Surfaces</span></a></li>
+    </ul>
+  </details>
+
+  <details class="chapter" open>
+    <summary>Lesson Notes Ch. 13</summary>
+    <ul class="lessons">
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 6 (13.1)</span> Vector Valued Functions</span></a></li>
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 7 (13.2)</span> Derivatives and Integrals of Vector Valued Functions</span></a></li>
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 8 (13.3+16.2)</span> Arc Length and Line Integrals</span></a></li>
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 9 (13.4)</span> Motions in Space</span></a></li>
+    </ul>
+  </details>
+
+  <details class="chapter" open>
+    <summary>Lesson Notes Ch. 14</summary>
+    <ul class="lessons">
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 10 (14.1)</span> Functions of Several Variables</span></a></li>
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 11 (14.3)</span> Partial Derivatives</span></a></li>
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 12 (14.5)</span> The Chain Rule</span></a></li>
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 13 (14.6)</span> Directional Derivatives and The Gradient</span></a></li>
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 14 (14.4)</span> Tangent Planes and Linear Approximation</span></a></li>
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 15 (14.7)</span> The Second Derivative Test</span></a></li>
+      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 16 (14.8)</span> Lagrange Multipliers</span></a></li>
+    </ul>
+  </details>
+
+  <footer><a href="../index.html">Back to homepage</a></footer>
+
+</main>
+
+<script>
+(function () {
+  var field = document.getElementById('field');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var blobs = [
+    { k: 'a', ease: 0.060, ox:  0.00, oy:  0.00, x: 0.30, y: 0.30 },
+    { k: 'b', ease: 0.035, ox:  0.12, oy: -0.10, x: 0.60, y: 0.50 },
+    { k: 'c', ease: 0.020, ox: -0.14, oy:  0.12, x: 0.50, y: 0.70 }
+  ];
+  var target = { x: 0.5, y: 0.4 }, lastMove = 0;
+  function onMove(e) {
+    target.x = e.clientX / window.innerWidth;
+    target.y = e.clientY / window.innerHeight;
+    lastMove = performance.now();
+  }
+  window.addEventListener('pointermove', onMove, { passive: true });
+  window.addEventListener('pointerdown', onMove, { passive: true });
+  function frame(t) {
+    var idle = !lastMove || t - lastMove > 2500, tx = target.x, ty = target.y;
+    if (idle && !reduce) { tx = 0.5 + 0.28 * Math.sin(t / 4200); ty = 0.45 + 0.28 * Math.cos(t / 5300); }
+    for (var i = 0; i < blobs.length; i++) {
+      var b = blobs[i], w = reduce ? 0 : 0.03 * Math.sin(t / 1800 + i * 2);
+      b.x += (tx + b.ox + w - b.x) * b.ease;
+      b.y += (ty + b.oy + w - b.y) * b.ease;
+      field.style.setProperty('--' + b.k + 'x', (b.x * 100).toFixed(2) + '%');
+      field.style.setProperty('--' + b.k + 'y', (b.y * 100).toFixed(2) + '%');
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
+
