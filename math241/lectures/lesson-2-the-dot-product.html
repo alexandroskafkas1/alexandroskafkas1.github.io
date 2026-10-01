@@ -86,11 +86,11 @@
 
     <section>
         <h2>Algebraic Definition and Properties</h2>
-        <p>While vector addition and scalar multiplication produce new vectors, the <strong>dot product</strong> (or standard Euclidean inner product) pairs two vectors to produce a real number (scalar). It provides the algebraic bridge between coordinate geometry and metric quantities like length and angle.</p>
+        <p>While vector addition and scalar multiplication produce new vectors, the <strong>dot product</strong> (or standard Euclidean inner product) pairs two vectors to produce a real number (s[...]
 
         <div class="box definition">
             <span class="label">Definition: Dot Product</span>
-            <p>For vectors \(\vec{u} = \langle u_1, u_2, \dots, u_n \rangle\) and \(\vec{w} = \langle w_1, w_2, \dots, w_n \rangle\) in \(\mathbb{R}^n\), their <strong>dot product</strong> is the sum of the products of their corresponding components:</p>
+            <p>For vectors \(\vec{u} = \langle u_1, u_2, \dots, u_n \rangle\) and \(\vec{w} = \langle w_1, w_2, \dots, w_n \rangle\) in \(\mathbb{R}^n\), their <strong>dot product</strong> is the [...]
             \[ \vec{u} \cdot \vec{w} \coloneq \sum_{i=1}^n u_i w_i = u_1w_1 + u_2w_2 + \dots + u_nw_n \]
         </div>
 
@@ -111,7 +111,7 @@
         </div>
 
         <h3>Algebraic Laws</h3>
-        <p>Directly from the field axioms of \(\mathbb{R}\), the dot product satisfies the following identities for all \(\vec{u}, \vec{v}, \vec{w} \in \mathbb{R}^n\) and \(\lambda \in \mathbb{R}\):</p>
+        <p>Directly from the field axioms of \(\mathbb{R}\), the dot product satisfies the following identities for all \(\vec{u}, \vec{v}, \vec{w} \in \mathbb{R}^n\) and \(\lambda \in \mathbb{R}[...]
         <ol>
             <li><strong>Symmetry (Commutativity):</strong> \(\vec{u} \cdot \vec{w} = \vec{w} \cdot \vec{u}\)</li>
             <li><strong>Bilinearity (Distributivity):</strong> \(\vec{u} \cdot (\vec{v} + \vec{w}) = \vec{u} \cdot \vec{v} + \vec{u} \cdot \vec{w}\)</li>
@@ -122,7 +122,7 @@
 
     <section>
         <h2>Geometric Characterization: Angles</h2>
-        <p>By applying the Law of Cosines to the triangle formed by displacement vectors \(\vec{u}\), \(\vec{w}\), and \(\vec{u}-\vec{w}\), the purely algebraic coordinate formula links directly to geometric inclination.</p>
+        <p>By applying the Law of Cosines to the triangle formed by displacement vectors \(\vec{u}\), \(\vec{w}\), and \(\vec{u}-\vec{w}\), the purely algebraic coordinate formula links directly [...]
 
         <div class="box key">
             <span class="label">Theorem: Geometric Dot Product</span>
@@ -155,7 +155,7 @@
             <p>Two vectors \(\vec{u}\) and \(\vec{w}\) are <strong>orthogonal</strong> (perpendicular, written \(\vec{u} \perp \vec{w}\)) if and only if:</p>
             \[ \vec{u} \cdot \vec{w} = 0 \]
         </div>
-        <p>For non-zero vectors, this corresponds precisely to \(\cos\theta = 0 \iff \theta = \frac{\pi}{2}\). The zero vector \(\mathbf{0}\) is by definition orthogonal to every vector in the space.</p>
+        <p>For non-zero vectors, this corresponds precisely to \(\cos\theta = 0 \iff \theta = \frac{\pi}{2}\). The zero vector \(\mathbf{0}\) is by definition orthogonal to every vector in the sp[...]
 
         <div class="box example">
             <span class="label">Example 3</span>
@@ -180,12 +180,14 @@
         <h2>Projections: Scalar and Vector</h2>
         <p>Decomposing a vector along the line determined by another vector is a fundamental operation throughout linear algebra and physics. Let \(\vec{v} \neq \mathbf{0}\).</p>
 
+        <img src="figures/lesson-2/Lesson_2_Vector_Projection.png" alt="Diagram illustrating the vector projection of one vector onto another.">
+
         <div class="box definition">
             <span class="label">Definitions: Scalar and Vector Projections</span>
-            <p>The <strong>scalar projection</strong> (or signed component) of \(\vec{u}\) along \(\vec{v}\) is the signed length of the shadow cast by \(\vec{u}\) onto the line spanned by \(\vec{v}\):</p>
+            <p>The <strong>scalar projection</strong> (or signed component) of \(\vec{u}\) along \(\vec{v}\) is the signed length of the shadow cast by \(\vec{u}\) onto the line spanned by \(\vec[...]
             \[ \operatorname{comp}_{\vec{v}}\vec{u} = \|\vec{u}\|\cos\theta = \frac{\vec{u} \cdot \vec{v}}{\|\vec{v}\|} \]
             <p>The <strong>vector projection</strong> of \(\vec{u}\) onto \(\vec{v}\) is the actual vector displacement along the direction \(\hat{v}\):</p>
-            \[ \operatorname{proj}_{\vec{v}}\vec{u} = \left(\operatorname{comp}_{\vec{v}}\vec{u}\right)\hat{v} = \left(\frac{\vec{u} \cdot \vec{v}}{\|\vec{v}\|}\right)\frac{\vec{v}}{\|\vec{v}\|} = \left(\frac{\vec{u} \cdot \vec{v}}{\|\vec{v}\|^2}\right)\vec{v} \]
+            \[ \operatorname{proj}_{\vec{v}}\vec{u} = \left(\operatorname{comp}_{\vec{v}}\vec{u}\right)\hat{v} = \left(\frac{\vec{u} \cdot \vec{v}}{\|\vec{v}\|}\right)\frac{\vec{v}}{\|\vec{v}\|} [...]
         </div>
 
         <div class="box example">
@@ -203,19 +205,19 @@
             \[ \|\vec{v}\|^2 = (-2)^2 + 3^2 + 5^2 = 4 + 9 + 25 = 38 \implies \|\vec{v}\| = \sqrt{38} \]
             <ol>
                 <li>\(\operatorname{comp}_{\vec{v}}\vec{u} = \frac{\vec{u} \cdot \vec{v}}{\|\vec{v}\|} = -\frac{1}{\sqrt{38}}\)</li>
-                <li>\(\operatorname{proj}_{\vec{v}}\vec{u} = \left(\frac{\vec{u} \cdot \vec{v}}{\|\vec{v}\|^2}\right)\vec{v} = -\frac{1}{38}\langle -2, 3, 5 \rangle = \left\langle \frac{1}{19},\ -\frac{3}{38},\ -\frac{5}{38} \right\rangle\)</li>
+                <li>\(\operatorname{proj}_{\vec{v}}\vec{u} = \left(\frac{\vec{u} \cdot \vec{v}}{\|\vec{v}\|^2}\right)\vec{v} = -\frac{1}{38}\langle -2, 3, 5 \rangle = \left\langle \frac{1}{19},\ [...]
             </ol>
         </div>
     </section>
 
     <section>
         <h2>Application: Mechanical Work</h2>
-        <p>In classical mechanics, work measures energy transfer. When a constant force \(\vec{F}\) acts on a body undergoing a straight displacement \(\vec{D} = \overrightarrow{PQ}\), only the component of force directed along the path contributes to work done:</p>
+        <p>In classical mechanics, work measures energy transfer. When a constant force \(\vec{F}\) acts on a body undergoing a straight displacement \(\vec{D} = \overrightarrow{PQ}\), only the c[...]
         \[ W = \left(\operatorname{comp}_{\vec{D}}\vec{F}\right)\|\vec{D}\| = \left(\|\vec{F}\|\cos\theta\right)\|\vec{D}\| = \vec{F} \cdot \vec{D} \]
 
         <div class="box example">
             <span class="label">Example 5</span>
-            <p>A sled moves \(10\text{ m}\) due east along a displacement \(\vec{D} = \langle 10, 0 \rangle\text{ m}\). A tow rope exerts a constant pulling force \(\vec{F} = \langle 6, 8 \rangle\text{ N}\). Compute the work done by the tow rope.</p>
+            <p>A sled moves \(10\text{ m}\) due east along a displacement \(\vec{D} = \langle 10, 0 \rangle\text{ m}\). A tow rope exerts a constant pulling force \(\vec{F} = \langle 6, 8 \rangle[...]
         </div>
         <div class="box solution">
             <span class="label">Solution</span>
