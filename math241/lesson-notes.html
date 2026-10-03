@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -37,7 +37,7 @@
       background-size: 56px 56px; animation: tiles 40s linear infinite;
       -webkit-mask-image: radial-gradient(22vmax 22vmax at var(--mx) var(--my), #000, transparent 100%);
               mask-image: radial-gradient(22vmax 22vmax at var(--mx) var(--my), #000, transparent 100%); }
-    #grain { display:block; z-index:2; opacity:0.22; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='f[...]
+    #grain { display:block; z-index:2; opacity:0.22; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .28  0 0 0 0 .25  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
     * { box-sizing: border-box; }
     html { min-height: 100%; }
     body {
@@ -83,25 +83,16 @@
     .back:hover { text-decoration: none; }
     h1 { margin-top: 0.6rem; }
     .sub { margin-bottom: 1.2rem; }
+    /* full-course PDF download button */
     .pdf-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0.25rem 0 1.25rem;
-      padding: 0.65rem 1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(77, 122, 130, 0.35);
-      background: rgba(255,255,255,0.62);
-      color: var(--ink);
-      font-weight: 600;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 2px 8px rgba(50,60,60,0.08);
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin: 0.25rem 0 1.25rem; padding: 0.55rem 1.1rem; border-radius: 999px;
+      border: 1px solid rgba(77,122,130,0.35); background: rgba(255,255,255,0.62);
+      color: var(--ink); font-size: 0.95rem; font-weight: 600;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 1px 3px rgba(50,60,60,0.10), 0 4px 10px rgba(50,60,60,0.05);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
     }
-    .pdf-btn:hover {
-      text-decoration: none;
-      background: rgba(255,255,255,0.85);
-      color: var(--link-hover);
-      border-color: rgba(176, 114, 130, 0.45);
-    }
+    .pdf-btn:hover { text-decoration: none; background: rgba(255,255,255,0.9); color: var(--link-hover); border-color: rgba(176,114,130,0.45); }
     details.chapter { margin-bottom: 1.5rem; border: 1px solid var(--line); border-radius: 0.6rem; overflow: hidden; background: var(--row);
       box-shadow: 0 1px 3px rgba(50,60,60,0.06), 0 6px 16px rgba(50,60,60,0.05); }
     details.chapter > summary { list-style: none; cursor: pointer; padding: 0.6rem 0.9rem; background: var(--head);
@@ -141,38 +132,38 @@
 
   <!-- ==================== MATH 241 ==================== -->
   <a class="pdf-btn" href="lectures/fall-2026-ma-241-lesson-notes-update-10-02-2026.pdf" download="MATH241-Calculus-III-Lesson-Notes.pdf">&#128462; Download full course notes (PDF)</a>
-  
+
   <details class="chapter" open>
     <summary>Lesson Notes Ch. 12</summary>
     <ul class="lessons">
       <li><a href="lectures/lesson-1-vectors-and-geometry.html"><span class="icon">&#128196;</span><span><span class="num">Lesson 1 (12.2)</span> Vectors and Geometry</span></a></li>
       <li><a href="lectures/lesson-2-the-dot-product.html"><span class="icon">&#128196;</span><span><span class="num">Lesson 2 (12.3)</span> The Dot Product</span></a></li>
       <li><a href="lectures/lesson-3-the-cross-product.html"><span class="icon">&#128196;</span><span><span class="num">Lesson 3 (12.4)</span> The Cross Product</span></a></li>
-      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 4 (12.5)</span> Lines and Planes in R3</span></a></li>
-      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 5 (12.6)</span> Quadric Surfaces</span></a></li>
+      <li class="soon"><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 4 (12.5)</span> Lines and Planes in R3</span></a></li>
+      <li class="soon"><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 5 (12.6)</span> Quadric Surfaces</span></a></li>
     </ul>
   </details>
 
   <details class="chapter" open>
     <summary>Lesson Notes Ch. 13</summary>
     <ul class="lessons">
-      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 6 (13.1)</span> Vector Valued Functions</span></a></li>
-      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 7 (13.2)</span> Derivatives and Integrals of Vector Valued Functions</span></a></li>
-      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 8 (13.3+16.2)</span> Arc Length and Line Integrals</span></a></li>
-      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 9 (13.4)</span> Motions in Space</span></a></li>
+      <li class="soon"><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 6 (13.1)</span> Vector Valued Functions</span></a></li>
+      <li class="soon"><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 7 (13.2)</span> Derivatives and Integrals of Vector Valued Functions</span></a></li>
+      <li class="soon"><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 8 (13.3+16.2)</span> Arc Length and Line Integrals</span></a></li>
+      <li class="soon"><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 9 (13.4)</span> Motions in Space</span></a></li>
     </ul>
   </details>
 
   <details class="chapter" open>
     <summary>Lesson Notes Ch. 14</summary>
     <ul class="lessons">
-      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 10 (14.1)</span> Functions of Several Variables</span></a></li>
-      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 11 (14.3)</span> Partial Derivatives</span></a></li>
-      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 12 (14.5)</span> The Chain Rule</span></a></li>
-      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 13 (14.6)</span> Directional Derivatives and The Gradient</span></a></li>
-      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 14 (14.4)</span> Tangent Planes and Linear Approximation</span></a></li>
-      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 15 (14.7)</span> The Second Derivative Test</span></a></li>
-      <li><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 16 (14.8)</span> Lagrange Multipliers</span></a></li>
+      <li class="soon"><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 10 (14.1)</span> Functions of Several Variables</span></a></li>
+      <li class="soon"><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 11 (14.3)</span> Partial Derivatives</span></a></li>
+      <li class="soon"><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 12 (14.5)</span> The Chain Rule</span></a></li>
+      <li class="soon"><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 13 (14.6)</span> Directional Derivatives and The Gradient</span></a></li>
+      <li class="soon"><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 14 (14.4)</span> Tangent Planes and Linear Approximation</span></a></li>
+      <li class="soon"><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 15 (14.7)</span> The Second Derivative Test</span></a></li>
+      <li class="soon"><a href="#"><span class="icon">&#128196;</span><span><span class="num">Lesson 16 (14.8)</span> Lagrange Multipliers</span></a></li>
     </ul>
   </details>
 
